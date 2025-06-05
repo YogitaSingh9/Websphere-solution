@@ -78,7 +78,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="index.html" class="nav-item nav-link active" >Home</a>
+                        <a href="index.html" class="nav-item nav-link" >Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
@@ -101,7 +101,7 @@
                             </div>
                         </div>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Recruitment</a>
+                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Recruitment</a>
                             <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
                                 <a href="recruitment-student.html" class="dropdown-item">Student</a>
                                 <a href="recruitment-client.html" class="dropdown-item">Client</a>
@@ -131,7 +131,7 @@
                         <h3 class="text-uppercase mb-3">Join Our Student Program</h3>
                         <p>We offer exciting opportunities for students to join our team and gain valuable experience in the tech industry.</p>
                         <p>Apply now to be part of our innovative projects and professional growth.</p>
-                        <form id="studentForm" action="contact-success.html" method="POST" enctype="multipart/form-data" class="mt-4">
+                        <form id="studentForm" action="contact-success.html" method="GET" enctype="multipart/form-data" class="mt-4">
                             <div class="row g-3">
                                 <div class="col-md-4">
                                     <label for="firstName" class="form-label">First Name</label>
@@ -158,23 +158,193 @@
                                     <input class="form-control" type="file" id="cvUpload" name="cvUpload" accept=".pdf,.doc,.docx" required>
                                 </div>
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                                    <button type="submit" class="btn btn-primary mt-3" >Submit</button>
                                 </div>
                             </div>
                         </form>
-                        <script>
-                            document.getElementById('studentForm').addEventListener('submit', function(event) {
-                                event.preventDefault();
-                                alert('Thank you for your submission! We will get back to you soon.');
-                                this.submit();
-                            });
-                        </script>
+                        
                     </div>
                 </div>
             </div>
+            <!-- Job Listings and Filters Start -->
+            <div class="row mt-5">
+                <div class="col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="border rounded p-4">
+                        <h5 class="mb-4">Filter Jobs</h5>
+                        <form id="filterForm">
+                            <div class="mb-3">
+                                <label for="packageFilter" class="form-label">Package</label>
+                                <select class="form-select" id="packageFilter" name="packageFilter">
+                                    <option value="">All</option>
+                                    <option value="0-5L">0-5 LPA</option>
+                                    <option value="5-10L">5-10 LPA</option>
+                                    <option value="10-15L">10-15 LPA</option>
+                                    <option value="15L+">15 LPA+</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="roleTypeFilter" class="form-label">Type of Role</label>
+                                <select class="form-select" id="roleTypeFilter" name="roleTypeFilter">
+                                    <option value="">All</option>
+                                    <option value="Full-time">Full-time</option>
+                                    <option value="Part-time">Part-time</option>
+                                    <option value="Internship">Internship</option>
+                                </select>
+                            </div>
+                             <div class="mb-3">
+                                <label for="joiningPeriodFilter" class="form-label">Select Preferred Joining Period</label>
+                                <select class="form-select" id="joiningPeriodFilter" name="joiningPeriodFilter">
+                                    <option value="">All</option>
+                                    <option value="Immediately">Immediate</option>
+                                    <option value="Within 7 Days">Within 7 Days</option>
+                                    <option value="Within 15 Days">Within 15 Days</option>
+                                    <option value="Within 30 Days">Within 30 Days</option>
+                                    <option value="After 1 Month">After 1 Month</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="specificRoleFilter" class="form-label">Position</label>
+                                <select class="form-select" id="specificRoleFilter" name="specificRoleFilter">
+                                    <option value="">All</option>
+                                    <option value="SDE">SDE</option>
+                                    <option value="Designer">Designer</option>
+                                    <option value="Frontend Developer">Project Manager</option>
+                                    <option value="Backend Developer">Data Analyst</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-9 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="border rounded p-4">
+                        <h5 class="mb-4">Job Openings</h5>
+                        <div class="row g-4">
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <!--<img src="img/companyA-logo.jpg" class="card-img-top" alt="Company A Logo" style="height: 100px; object-fit: contain;">-->
+                                    <div class="card-body">
+                                        <h5 class="card-title">Adobe</h5>
+                                        <p class="card-text">Position: SDE</p>
+                                        <p class="card-text">Type of Role: Internship</p>
+                                        <p class="card-text">Number of Positions: 3</p>
+                                        <p class="card-text">Joining: Immediate</p>
+                                         <p class="card-text">Package: 6LPA</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <!--<img src="img/companyB-logo.jpg" class="card-img-top" alt="Company B Logo" style="height: 100px; object-fit: contain;">-->
+                                    <div class="card-body">
+                                        <h5 class="card-title">Amazon</h5>
+                                        <p class="card-text">Position: Data Analyst</p>
+                                        <p class="card-text">Type of Role: Internship</p>
+                                        <p class="card-text">Number of Positions: 2</p>
+                                        <p class="card-text">Joining: Immediate</p>
+                                        <p class="card-text">Package: 10LPA</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                   <!-- <img src="img/companyC-logo.jpg" class="card-img-top" alt="Company C Logo" style="height: 100px; object-fit: contain;">-->
+                                    <div class="card-body">
+                                        <h5 class="card-title">TCS</h5>
+                                        <p class="card-text">Position: Project Manager</p>
+                                        <p class="card-text">Type of Role: Internship</p>
+                                        <p class="card-text">Number of Positions: 1</p>
+                                        <p class="card-text">Joining: Immediate</p>
+                                        <p class="card-text">Package: 8LPA</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Job Listings and Filters End -->
         </div>
     </div>
+        <script>
+        document.getElementById('filterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const packageFilter = document.getElementById('packageFilter').value.toLowerCase();
+            const roleTypeFilter = document.getElementById('roleTypeFilter').value.toLowerCase();
+            const joiningPeriodFilter = document.getElementById('joiningPeriodFilter').value.toLowerCase();
+            const specificRoleFilter = document.getElementById('specificRoleFilter').value.toLowerCase();
+
+            const jobCards = document.querySelectorAll('.col-md-4.mb-3');
+
+            jobCards.forEach(card => {
+                const positionText = card.querySelector('.card-text:nth-of-type(2)').textContent.toLowerCase();
+                const roleTypeText = card.querySelector('.card-text:nth-of-type(3)').textContent.toLowerCase();
+                const joiningText = card.querySelector('.card-text:nth-of-type(5)').textContent.toLowerCase();
+                const packageText = card.querySelector('.card-text:nth-of-type(6)').textContent.toLowerCase();
+
+                // Extract values after colon and trim spaces
+                const position = positionText.split(':')[1].trim();
+                const roleType = roleTypeText.split(':')[1].trim();
+                const joining = joiningText.split(':')[1].trim();
+                const packageVal = packageText.split(':')[1].trim();
+
+                let show = true;
+
+                // Package filter logic: check if packageVal falls within selected range
+                if (packageFilter) {
+                    if (packageFilter === '0-5l') {
+                        if (!(parseInt(packageVal) >= 0 && parseInt(packageVal) <= 5)) {
+                            show = false;
+                        }
+                    } else if (packageFilter === '5-10l') {
+                        if (!(parseInt(packageVal) > 5 && parseInt(packageVal) <= 10)) {
+                            show = false;
+                        }
+                    } else if (packageFilter === '10-15l') {
+                        if (!(parseInt(packageVal) > 10 && parseInt(packageVal) <= 15)) {
+                            show = false;
+                        }
+                    } else if (packageFilter === '15l+') {
+                        if (!(parseInt(packageVal) > 15)) {
+                            show = false;
+                        }
+                    }
+                }
+
+                // Role type filter
+                if (roleTypeFilter && roleType !== roleTypeFilter) {
+                    show = false;
+                }
+
+                // Joining period filter: handle "immediate" vs "immediately"
+                if (joiningPeriodFilter) {
+                    if (joiningPeriodFilter === 'immediately' && joining !== 'immediate') {
+                        show = false;
+                    } else if (joiningPeriodFilter !== 'immediately' && joining !== joiningPeriodFilter) {
+                        show = false;
+                    }
+                }
+
+                // Specific role filter
+                if (specificRoleFilter && position !== specificRoleFilter) {
+                    show = false;
+                }
+
+                if (show) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
     <!-- Recruitment Student Content End -->
+
+
+     
 
      <!-- Footer Start -->
     <div class="container-fluid bg-dark footer py-5 wow fadeIn" data-wow-delay="0.1s">

@@ -177,6 +177,31 @@
     z-index: 1;
 }
 
+.carousel-item {
+    position: relative !important;
+}
+
+.carousel-item::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+}
+
+.carousel-caption {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
 .carousel .carousel-indicators {
     top: 0;
     bottom: 0;
