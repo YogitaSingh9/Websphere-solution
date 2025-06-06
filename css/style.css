@@ -129,7 +129,18 @@
 }
 
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
+    .navbar .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-right: auto;
+    }
+
+    .navbar .navbar-toggler {
+        margin-left: auto;
+    }
+
+    .navbar .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
@@ -138,24 +149,15 @@
         margin-top: 15px;
         border-top: 1px solid #EEEEEE;
     }
-}
 
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        border: none;
-        margin-top: 0;
-        top: 150%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        top: 100%;
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
+    .navbar .navbar-brand h1 {
+        font-size: 18px; /* or try 16px */
+        margin: 0;
     }
 }
 
@@ -173,7 +175,7 @@
     text-align: left;
     background: rgba(0, 0, 0, .7);
     padding: 3rem;
-    padding-left: 11rem;
+    padding-left: 10rem;
     z-index: 1;
 }
 
@@ -206,13 +208,13 @@
 @media (max-width: 992px) {
     .carousel .carousel-item {
         position: relative;
-        min-height: 600px;
+        min-height: 500px;
     }
     
     .carousel .carousel-item img {
         position: absolute;
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 90%;
         object-fit: cover;
     }
 
@@ -243,7 +245,7 @@
 
 /* Responsive carousel image and caption adjustments */
 .carousel .carousel-item img {
-    width: 100%;
+    width: 90%;
     height: auto;
     object-fit: cover;
 }
@@ -368,68 +370,106 @@
 
 
 /*** Features ***/
-.feature {
-    background: linear-gradient(to right, rgba(0, 0, 0, .1), rgba(0, 0, 0, 1) 50%), url(../img/carousel-1.jpg) left center no-repeat;
-    background-size: cover;
-}
 
-.feature-row {
-    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-}
+    .feature {
+        background: linear-gradient(to right, rgba(255, 0, 0, 0.1), rgba(0, 0, 0, 1) 50%), url(../img/carousel-1.jpg) left center no-repeat;
+        background-size: cover;
+        
+    
+    }
 
-.feature-item {
-    border-color: rgba(0, 0, 0, .03) !important;
-}
+    .feature-row {
+        box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+        padding:50px;
+    }
 
-.feature-icon {
-    position: relative;
-    transition: .5s;
-}
+    .feature-item {
+        border-color: rgba(183, 176, 176, 0.24) !important;
 
-.feature-item:hover .feature-icon {
-    margin-left: 3rem;
-}
+        
+    
+    
+    }
 
-.feature-item a::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 1px;
-    background: var(--bs-secondary);
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    z-index: -1;
-}
+    .feature-icon {
+        position: relative;
+        transition: .5s;
+    }
 
-.feature-item a:hover {
-    color: var(--bs-primary) !important;
-}
+    .feature-item:hover .feature-icon {
+        margin-left: 3rem;
+    }
 
-.feature-item a:hover::after {
-    background: var(--bs-primary);
-}
+    .feature-item a::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: var(--bs-secondary);
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
 
-.experience .progress {
-    height: 5px;
-}
+    .feature-item a:hover {
+        color: var(--bs-primary) !important;
+    
+    }
 
-.experience .progress .progress-bar {
-    width: 0px;
-    transition: 3s;
-}
+    .feature-item a:hover::after {
+        background: var(--bs-primary);
+    }
+
+    .experience .progress {
+        height: 5px;
+    }
+
+    .experience .progress .progress-bar {
+        width: 0px;
+        transition: 3s;
+    }
+
+
+    @media(max-width: 991px){
+        #Feature-id{
+        
+    display:flex;
+    flex-direction: row;
+    gap:10px;
+        
+
+
+    }
+    }
+    .animated-feature-section {
+        animation: fadeInZoom 1.2s ease-in-out;
+      }
+      
+      @keyframes fadeInZoom {
+        from {
+          opacity: 0;
+          transform: scale(0.95) translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+      
+
 
 
 /*** Service ***/
 .service .service-item {
     position: relative;
-    margin-top: 45px;
+    margin-top: 25px;
 }
 
 .service .service-inner {
     position: relative;
     height: 100%;
-    margin-top: 45px;
+    margin-top: 25px;
     background: var(--bs-white);
     box-shadow: 0 0 45px rgba(0, 0, 0, .05);
 }

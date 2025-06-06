@@ -30,6 +30,105 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 15px;
+            
+            right: 25px;
+            z-index: 9999;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+          }
+      
+          .chatbot-button {
+            background: #fff;
+            border-radius: 70%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+          }
+      
+          .chatbot-button img {
+            width: 50px;
+            height: 50px;
+          }
+      
+          .chatbot-button:hover {
+            transform: scale(1.1);
+          }
+      
+          .chatbot-box {
+            position: absolute;
+            bottom: 90px;
+            right: 0;
+            width: 280px;
+            background-color: #f8f9fa;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            padding: 15px;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            animation: fadeInUp 0.4s ease;
+          }
+      
+          .chatbot-box.show {
+            display: flex;
+          }
+      
+          .chatbot-header {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333;
+          }
+      
+          .chat-option {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            text-align: center;
+          }
+      
+          .chat-option:hover {
+            background-color: #0056b3;
+          }
+         
+      
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        
+        .pricing-card {
+            transition: all 0.4s ease-in-out;
+            background-color: #fff;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+            border-color: #007bff;
+    
+        }
+    </style>
 </head>
 
 <body>
@@ -112,7 +211,7 @@
 
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-6 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid p-0 mb-4 wow fadeIn" data-wow-delay="0.1s">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="0" class="active"
@@ -120,7 +219,7 @@
                     <img class="img-fluid" src="img/computer.jpg" alt="Image">
                 </button>
                 <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="1" aria-label="Slide 2">
-                    <img class="img-fluid" src="/img/SEO.jpg" alt="Image">
+                    <img class="img-fluid" src="img/SEO.jpg" alt="Image">
                 </button>
                 <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="2" aria-label="Slide 3">
                     <img class="img-fluid" src="img/code.jpg" alt="Image">
@@ -159,7 +258,7 @@
 
 
     <!-- About Start -->
-    <div class="container-fluid pt-6 pb-6">
+    <div class="container-fluid pt-5 pb-1">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
@@ -205,134 +304,82 @@
     <!-- About End -->
 
 
-    <!-- Features Start -->
-    <div class="container-fluid pt-6 pb-6">
-        <div class="container pt-4">
-            <div class="row g-0 feature-row wow fadeIn" data-wow-delay="0.1s">
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="feature-item border h-100">
-                        <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
-                            <i class="fa fa-project-diagram fa-2x text-white"></i>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <h5 class="text-uppercase mb-3">End-to-End
-</h5>
-                            <p>From initial planning to final deployment, Websphere Solution provides full-cycle solutions tailored to your business needs, ensuring optimal performance at every stage.
-
-
-</p>
-                            <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
-                                href="Feature/EndtoEnd.html" target="_blank" rel="noopener noreferrer"><b class="bg-white pe-3">Read More</b> <i
-                                    class="bi bi-arrow-right bg-white ps-3"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.4s">
-                    <div class="feature-item border h-100">
-                        <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
-                            <i class="fa fa-users-cog fa-2x text-white"></i>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <h5 class="text-uppercase"> Expert Team</h5>
-                            <p>Our experienced developers, engineers, and digital marketers bring cross-domain expertise, delivering innovative, efficient, and results-driven technology solutions.
-
-
-</p>
-                            <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
-                                href="Feature/ExpertTeam.html" target="_blank" rel="noopener noreferrer"><b class="bg-white pe-3">Read More</b> <i
-                                    class="bi bi-arrow-right bg-white ps-3"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="feature-item border h-100">
-                        <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
-                            <i class="fa fa-chart-line fa-2x text-white"></i>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <h5 class="text-uppercase">Scalable Services</h5>
-                            <p>Websphere Solution offers flexible, growth-ready services—be it SEO, IoT, or software development—designed to adapt and scale alongside your evolving business needs.
-</p>
-                            <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
-                                href="Feature/ScalableServices.html" target="_blank" rel="noopener noreferrer"><b class="bg-white pe-3">Read More</b> <i
-                                    class="bi bi-arrow-right bg-white ps-3"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.6s">
-                    <div class="feature-item border h-100">
-                        <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
-                            <i class="fa fa-tools fa-2x text-white"></i>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <h5 class="text-uppercase">Advanced Tech</h5>
-                            <p>We use cutting-edge tools and modern platforms to build efficient, future-proof solutions that keep your business ahead and efficient in a rapidly changing digital landscape.
-</p>
-                            <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
-                                href="Feature/AdvanceTech.html" target="_blank" rel="noopener noreferrer"><b class="bg-white pe-3">Read More</b> <i
-                                    class="bi bi-arrow-right bg-white ps-3"></i></a>
-                        </div>
-                    </div>
-                </div>
+<!-- Features Start -->
+<div class="container-fluid pt-5 pb-1 mt-5 mb-5 animated-feature-section">
+    <div class="container p-3">
+      <div id="Feature-id" class="row g-4 feature-row">
+        
+        <!-- Feature 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-item border h-100">
+            <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
+              <i class="fa fa-project-diagram fa-2x text-white"></i>
             </div>
-        </div>
-    </div>
-    <!-- Features End -->
-
-
-    <!---- Features Start
-    <div class="container-fluid feature mt-6 mb-6 wow fadeIn" data-wow-delay="0.1s">
-            <div class="row g-0 justify-content-end">
-                <div class="col-lg-6 pt-5">
-                    <div class="mt-5">
-                        <h1 class="display-6 text-white text-uppercase mb-4 wow fadeIn" data-wow-delay="0.3s">Why You should Choose Websphere Solutions</h1>
-                        <p class="text-light mb-4 wow fadeIn" data-wow-delay="0.4s">At Websphere Solutions, we empower businesses with cutting-edge technology. From boosting your online visibility with smart SEO strategies to building smart IoT systems and crafting custom software, we’re your trusted tech partner.</p>
-                        <div class="row g-4 pt-2 mb-4">
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
-                                <div class="flex-column text-center border border-5 border-primary p-5">
-                                    <h1 class="text-white" data-toggle="counter-up">9999</h1>
-                                    <p class="text-white text-uppercase mb-0">Satisfied Clients</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="flex-column text-center border border-5 border-primary p-5">
-                                    <h1 class="text-white" data-toggle="counter-up">9999</h1>
-                                    <p class="text-white text-uppercase mb-0">Complete Projects</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border border-5 border-primary border-bottom-0 p-5">
-                            <div class="experience mb-4 wow fadeIn" data-wow-delay="0.6s">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <span class="text-white text-uppercase">Experience</span>
-                                    <span class="text-white">90%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="experience wow fadeIn" data-wow-delay="0.7s">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <span class="text-white text-uppercase">Work Done</span>
-                                    <span class="text-white">95%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="p-5 pt-0">
+              <h5 class="text-uppercase mb-3">End-to-End</h5>
+              <p>From initial planning to final deployment, Websphere Solution provides full-cycle solutions tailored to your business needs.</p>
+              <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
+                href="Feature/EndtoEnd.html" target="_blank"><b class="bg-white pe-3">Read More</b><i class="bi bi-arrow-right bg-white ps-3"></i></a>
             </div>
+          </div>
         </div>
+  
+        <!-- Feature 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-item border h-100">
+            <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
+              <i class="fa fa-users-cog fa-2x text-white"></i>
+            </div>
+            <div class="p-5 pt-0">
+              <h5 class="text-uppercase">Expert Team</h5>
+              <p>Our experienced developers and marketers deliver innovative and results-driven technology solutions.</p>
+              <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
+                href="Feature/ExpertTeam.html" target="_blank"><b class="bg-white pe-3">Read More</b><i class="bi bi-arrow-right bg-white ps-3"></i></a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Feature 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-item border h-100">
+            <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
+              <i class="fa fa-chart-line fa-2x text-white"></i>
+            </div>
+            <div class="p-5 pt-0">
+              <h5 class="text-uppercase">Scalable Services</h5>
+              <p>Flexible, growth-ready services—be it SEO, IoT, or software—designed to scale with your business.</p>
+              <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
+                href="Feature/ScalableServices.html" target="_blank"><b class="bg-white pe-3">Read More</b><i class="bi bi-arrow-right bg-white ps-3"></i></a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Feature 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-item border h-100">
+            <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
+              <i class="fa fa-tools fa-2x text-white"></i>
+            </div>
+            <div class="p-5 pt-0">
+              <h5 class="text-uppercase">Advanced Tech</h5>
+              <p>We use cutting-edge tools to build future-proof solutions that keep your business ahead in a changing world.</p>
+              <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
+                href="Feature/AdvanceTech.html" target="_blank"><b class="bg-white pe-3">Read More</b><i class="bi bi-arrow-right bg-white ps-3"></i></a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
     </div>
-    Features End -->
+  </div>
+  <!-- Features End -->
+  
 
+
+   
 
     <!-- Service Start -->
-    <div class="container-fluid service pt-6 pb-6">
+    <div class="container-fluid service pt-5 pb-1">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h1 class="display-6 text-uppercase mb-5">Our Services</h1>
@@ -466,11 +513,11 @@
 
 
     <!-- Appoinment Start -->
-    <div class="container-fluid appoinment mt-6 mb-6 py-5 wow fadeIn" data-wow-delay="0.1s" style="position: relative; background-image: url('img/technology.jpg'); background-size: cover; background-position: center;">
-        <div style="position: absolute; inset: 0; background-color: rgba(0, 0, 0.9, 0.9); z-index: 1;"></div>
+    <div class="container-fluid appoinment mt-6 mb-2 py-5 wow fadeIn " data-wow-delay="0.1s" style="position: relative; background-image: url('img/technology.jpg'); background-size: cover; background-position: center;">
+        <div style="position: absolute; inset: 0; background-color: rgba(0, 0, 0.9, 0.9); z-index: 1; padding:10px; "></div>
         <div class="container pt-5" style="position: relative; z-index: 2;">
             <div class="row gy-5 gx-0">
-                <div class="col-lg-6 pe-lg-5 wow fadeIn" data-wow-delay="0.3s">
+                <div class="col-lg-6 pe-lg-5 wow fadeIn " data-wow-delay="0.3s">
                     <h1 class="display-6 text-uppercase text-white mb-4">Discuss Your Project
                     </h1>
                     <p class="text-white mb-5 wow fadeIn" data-wow-delay="0.4s">Tell us your vision — we’re ready to build something great together.
@@ -628,68 +675,66 @@
     </div>
     Team End-->
 
-    <!-- Pricing Start -->
-    <div class="container-fluid pt-6 pb-6">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="display-6 text-uppercase mb-5">Our Pricing Plans</h1>
+<!-- Pricing Start -->
+<div class="container-fluid pt-6 pb-6">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="display-6 text-uppercase mb-5">Our Pricing Plans</h1>
+        </div>
+        <div class="row g-4">
+            <!-- Web Services Plan -->
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="pricing-card h-100 border rounded p-5 shadow-sm">
+                    <h3 class="text-uppercase mb-4">Web Services Plan</h3>
+                    <h1 class="display-5 mb-4">₹ 25,000<span class="fs-5 fw-normal">/-</span></h1>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Everything in Standard</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Upto 10 Pages</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>E-commerce Functionality</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Custom Animations</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Mobile & Tablet Compatibility</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>SSL Certificate Setup</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Priority Support</li>
+                    </ul>
+                </div>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="border rounded p-5">
-                        <h3 class="text-uppercase mb-4">Web Services Plan</h3>
-                        <h1 class="display-5 mb-4">₹ 25,000<span class="fs-5 fw-normal">/-</span></h1>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Everything in Standard</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Upto 10 Pages</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>E-commerce Functionality</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Custom Animations</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Mobile & Tablet Compatibility</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>SSL Certificate Setup</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Priority Support</li>
-                        </ul>
-                        <!--<a href="#" class="btn btn-primary py-2 px-4 text-uppercase">Choose Plan</a>-->
-                    </div>
+            <!-- App Services Plan -->
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="pricing-card h-100 border rounded p-5 shadow-sm">
+                    <h3 class="text-uppercase mb-4">App Services Plan</h3>
+                    <h1 class="display-5 mb-4">₹60,000<span class="fs-5 fw-normal">/-</span></h1>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Cross-Platform App Design (Android & iOS)</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Up to 15 Screens</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Advanced UI/UX with Animations</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Payment Gateway Setup</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>App Store & Play Store Deployment</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Real-Time Database Integration</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Bug Fixes & Minor Updates</li>
+                    </ul>
                 </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="border rounded p-5">
-                        <h3 class="text-uppercase mb-4">App Services Plan</h3>
-                        <h1 class="display-5 mb-4">₹60,000<span class="fs-5 fw-normal">/-</span></h1>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Cross-Platform App Design (Android & iOS)</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Up to 15 Screens</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Advanced UI/UX with Animations</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Payment Gateway Setup</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>App Store & Play Store Deployment</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Real-Time Database Integration</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Bug Fixes & Minor Updates</li>
-                        </ul>
-                        <!--<a href="#" class="btn btn-primary py-2 px-4 text-uppercase">Choose Plan</a>-->
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="border rounded p-5">
-                        <h3 class="text-uppercase mb-4">SEO Services Plan</h3>
-                        <h1 class="display-5 mb-4">₹6,00000<span class="fs-5 fw-normal">/-</span></h1>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Website SEO Audit</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>On-Page Optimization (Title, Meta Tags, Headers)</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Google Search Console Setup</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Keyword Strategy (30+ Keywords)</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>High-Quality Backlink Building</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Schema Markup Implementation</li>
-                            <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Conversion Rate Optimization (CRO)</li>
-
-
-                        </ul>
-                        <!--<a href="#" class="btn btn-primary py-2 px-4 text-uppercase">Choose Plan</a>-->
-                    </div>
+            </div>
+            <!-- SEO Services Plan -->
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="pricing-card h-100 border rounded p-5 shadow-sm">
+                    <h3 class="text-uppercase mb-4">SEO Services Plan</h3>
+                    <h1 class="display-5 mb-4">₹6,00,000<span class="fs-5 fw-normal">/-</span></h1>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Website SEO Audit</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>On-Page Optimization (Title, Meta Tags, Headers)</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Google Search Console Setup</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Keyword Strategy (30+ Keywords)</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>High-Quality Backlink Building</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Schema Markup Implementation</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Conversion Rate Optimization (CRO)</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Pricing End -->
-
+</div>
+<!-- Pricing End -->
+ 
   <!----  Testimonial Start
     <div class="container-fluid pt-6 pb-6">
         <div class="container">
@@ -841,11 +886,13 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-uppercase text-light mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
                     <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="TermsCondition.html">Terms & Condition</a>
+                    <a class="btn btn-link" href="OurInvestors.html">Our Investors</a>
+                    <a class="btn btn-link" href="PrivatePolicy.html">Private Policy</a>
+
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-uppercase text-light mb-4">Business Hours</h5>
@@ -860,22 +907,22 @@
                     <h5 class="text-uppercase text-light mb-4">Gallery</h5>
                     <div class="row g-1">
                         <div class="col-4">
-                            <img class="img-fluid" src="img/code.jpg" alt="">
+                            <img class="img-fluid" src="img/App_Dev_1.avif" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid" src="img/computer.jpg" alt="">
+                            <img class="img-fluid" src="img/Web_1.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid" src="img/design.jpg" alt="">
+                            <img class="img-fluid" src="img/SEO_1.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid" src="img/chart.jpg" alt="">
+                            <img class="img-fluid" src="img/App_Dev_2.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid" src="img/SEO.jpg" alt="">
+                            <img class="img-fluid" src="img/Web_2.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid" src="img/ormimage.webp" alt="">
+                            <img class="img-fluid" src="img/SEO_2.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -892,19 +939,37 @@
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                     &copy; <a class="fw-semi-bold" href="#">Websphere Solution</a>, All Right Reserved.
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    Designed and coded By <a class="fw-semi-bold" href="https://htmlcodex.com">Yogita Singh</a>
+                <!--<div class="col-md-6 text-center text-md-end">
+                    Designed and coded By <a class="fw-semi-bold" href="https://htmlcodex.com">Yogita Singh</a>-->
                 </div>
             </div>
         </div>
     </div>
     <!-- Copyright End -->
 
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i
-            class="bi bi-arrow-up"></i></a>
-
+<!-- Chatbot Integration -->
+<div class="chatbot-container">
+    <div class="chatbot-box" id="chatBox">
+      <div class="chatbot-header">Hi! How can I help you?</div>
+      <a href="WebService.html" class="chat-option">🌐 Web Services</a>
+      <a href="SEOService.html" class="chat-option">🔍 SEO Services</a>
+      <a href="AppService.html" class="chat-option">📱 App Development</a>
+      <a href="contact.html" class="chat-option">🤝 Discuss Your Project</a>
+      <a href="appoinment.html" class="chat-option">📅 Book an Appointment</a>
+    </div>
+  
+    <div class="chatbot-button" onclick="toggleChat()">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" alt="Chatbot Icon">
+    </div>
+  </div>
+  
+  <!-- Chatbot Logic -->
+  <script>
+    function toggleChat() {
+      const chatBox = document.getElementById('chatBox');
+      chatBox.classList.toggle('show');
+    }
+  </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
