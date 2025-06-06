@@ -30,25 +30,6 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-
-
-    <style>
-
-
-        
-        .pricing-card {
-            transition: all 0.4s ease-in-out;
-            background-color: #fff;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
-            border-color: #007bff;
-    
-        }
-    </style>
-
 </head>
 
 <body>
@@ -60,19 +41,11 @@
     <!-- Spinner End -->
 
 
-
-     <!-- Topbar Start -->
-    <div class="container-fluid bg-primary text-white d-none d-lg-flex wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-2">
-            <div class="d-flex align-items-center">
-                <a href="index.html">
-
     <!-- Topbar Start -->
     <div class="container-fluid bg-primary text-white d-none d-lg-flex wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-3">
             <div class="d-flex align-items-center">
-                <a href="index.html" class="d-flex align-items-center">
-
+                <a href="index.html">
                     <h2 class="text-white fw-bold m-0">Websphere Solution</h2>
                 </a>
                 <div class="ms-auto d-flex align-items-center">
@@ -90,7 +63,7 @@
     <!-- Topbar End -->
 
 
-    <!-- Navbar Start -->
+  <!-- Navbar Start -->
     <div class="container-fluid bg-white sticky-top wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
@@ -104,11 +77,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
-
                         <a href="index.html" class="nav-item nav-link" >Home</a>
-
-                        <a href="index.html" class="nav-item nav-link active" >Home</a>
-
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
@@ -139,7 +108,7 @@
                         </div>
                         <a href="Packages.html" class="nav-item nav-link">Packages</a>
                         <a href="courses.html" class="nav-item nav-link">Courses</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="contact.html" class="nav-item nav-link active">Contact</a>
                     </div>
                     <div class="ms-auto d-none d-lg-block">
                         <a href="contact.html" class="btn btn-primary py-2 px-3">Discuss Your Project</a>
@@ -151,25 +120,7 @@
     <!-- Navbar End -->
 
 
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header pt-5 mb-6 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container text-center pt-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="bg-white p-5">
-                        <h1 class="display-6 text-uppercase mb-3 animated slideInDown">Contact</h1>
-                        <nav aria-label="breadcrumb animated slideInDown">
-                            <ol class="breadcrumb justify-content-center mb-0">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item" aria-current="page">Contact</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Page Header End -->
+
 
 
     <!-- Contact Start -->
@@ -206,10 +157,11 @@
                 <div class="col-lg-6 mb-n5 wow fadeIn" data-wow-delay="0.7s">
                     <div class="bg-white p-5">
                         <h2 class="text-uppercase mb-4">Online Appoinment</h2>
+                        <form action="contact-success.html" method="GET">
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0 bg-light" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control border-0 bg-light" id="name" name="name" placeholder="Your Name" required>
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
@@ -221,25 +173,24 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0 bg-light" id="mobile" placeholder="Your Mobile">
+                                    <input type="text" class="form-control border-0 bg-light" id="mobile" name="mobile" placeholder="Your Mobile" required>
                                     <label for="mobile">Your Mobile</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <select class="form-select border-0 bg-light" id="service">
-                                        <option selected>App service</option>
-                                        <option value="">Web Service</option>
-                                         <option value="">SEO Service</option>
-
+                                    <select class="form-select border-0 bg-light" id="service" name="service" required>
+                                        <option value="" disabled selected>Choose A Service</option>
+                                        <option value="App service">App service</option>
+                                        <option value="Web Service">Web Service</option>
+                                        <option value="SEO Service">SEO Service</option>
                                     </select>
                                     <label for="service">Choose A Service</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control border-0 bg-light" placeholder="Leave a message here" id="message"
-                                        style="height: 130px"></textarea>
+                                    <textarea class="form-control border-0 bg-light" placeholder="Leave a message here" id="message" name="message" style="height: 130px" required></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
@@ -247,6 +198,7 @@
                                 <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -254,8 +206,8 @@
     </div>
     <!-- Contact End -->
 
-
- <!-- Newsletter Start -->
+    
+  <!-- Newsletter Start -->
     <div class="container-fluid newsletter mt-6 wow fadeIn" data-wow-delay="0.1s" style="position: relative; background-image: url('img/technology.jpg'); background-size: cover; background-position: center;">
         <div style="position: absolute; inset: 0; background-color: rgba(0, 0, 0.9, 0.9); z-index: 1;"></div>
         <div class="container pb-5" style="position: relative; z-index: 2;">
@@ -343,6 +295,8 @@
 </div>
 <!-- Footer End -->
 
+
+ 
     <!-- Copyright Start -->
     <div class="container-fluid text-body copyright py-4">
         <div class="container">
@@ -373,7 +327,6 @@
       <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" alt="Chatbot Icon">
     </div>
   </div>
-  
 
   <div>
     <!-- Call Button -->
@@ -401,14 +354,7 @@
       
         document.getElementById('callToggleBtn').addEventListener('click', togglePopup);
       </script>
-
-
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> dev/chat
+  
   <!-- Chatbot Logic -->
   <script>
     function toggleChat() {
@@ -416,7 +362,6 @@
       chatBox.classList.toggle('show');
     }
   </script>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -429,6 +374,22 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        (function () {
+            'use strict'
+            var form = document.getElementById('appoinmentForm');
+            if(form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        form.classList.add('was-validated');
+                    }
+                    // else do nothing, allow normal submission
+                }, false);
+            }
+        })();
+    </script>
 </body>
 
 </html>
