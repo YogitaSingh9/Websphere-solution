@@ -30,121 +30,87 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <style>
-        
-     
-   
-          .investor-wrapper {
-            position: relative;
-            margin-top: 60px;
-           
-           
-          }
-          .investor-card p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-          }
-          
-          .investor-img-wrapper {
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-          }
-          
-          .investor-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 5px solid white;
-            object-fit: cover;
-            background-color: white;
-          }
-          
-          .investor-card {
-            background-color: #9a906a;
-            color: white;
-            padding-top: 70px;
-            padding-bottom: 40px;
-            text-align: center;
-            border-radius: 8px 8px 0 0;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
-            transition: 0.3s;
-            position: relative;
-            z-index: 0;
-          }
-          
-          .investor-card.dark {
-            background-color: #343a40;
-          }
-          
-          .investor-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-top: 20px;
-          }
-          
-          .investor-role {
-            font-size: 1.1rem;
-            margin: 8px 0;
-          }
-          
-          .investor-desc {
-            font-size: 0.9rem;
-            padding: 0 10px;
-          }
-          
-          @media (max-width: 576px) {
-            .investor-card {
-              clip-path: none;
-              border-radius: 10px;
-              padding: 60px 20px 30px;
-            }
-
-          }
-          @media(max-width:990px){
-            .section-title{
-              font-size: 2rem;
-            }
-            .container{
-                padding:5px;
-                margin:5px;
-                     }
-          
-           
-          }
-
-          .section-title {
-            color: #5D4037; /* Rich brown */
-            font-weight: 700;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
-            position: relative;
-          }
-          
-          /* Animation */
-          .animated-heading {
-            opacity: 0;
-            animation: fadeSlideIn 1.2s ease forwards;
-          }
-          
-          /* Keyframes for smooth entrance */
-          @keyframes fadeSlideIn {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-    
-      
-          
-          </style>
   
+
+    
+<style>
+  .investor-box {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    animation: fadeInUp 0.8s ease-in-out forwards;
+    opacity: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Shadow and glow on hover */
+  .investor-box:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Image style */
+  .investor-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    margin-bottom: 15px;
+  }
+  
+  /* Text styles */
+  .investor-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+  }
+  
+  .investor-profile {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 8px;
+  }
+  
+  .investor-note {
+    font-size: 0.9rem;
+    color: #bbbbbb;
+  }
+  
+  /* Animation keyframes */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 576px) {
+    .investor-photo {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .investor-box {
+      padding: 20px;
+    }
+  }
+  
+</style>
 </head>
 
 <body>
@@ -160,7 +126,7 @@
     <div class="container-fluid bg-primary text-white d-none d-lg-flex wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-3">
             <div class="d-flex align-items-center">
-                <a href="index.html">
+                <a href="index.html" class="d-flex align-items-center">
                     <h2 class="text-white fw-bold m-0">Websphere Solution</h2>
                 </a>
                 <div class="ms-auto d-flex align-items-center">
@@ -178,11 +144,11 @@
     <!-- Topbar End -->
 
 
-   <!-- Navbar Start -->
+    <!-- Navbar Start -->
     <div class="container-fluid bg-white sticky-top wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
-                <a href="/index.html" class="navbar-brand d-lg-none d-flex align-items-center">
+                <a href="index.html" class="navbar-brand d-lg-none d-flex align-items-center">
                     <!--<img src="img/logo.jpg" alt="Logo" style="height:40px; width:auto; margin-right:5px;">-->
                     <h1 class="fw-bold m-0">Websphere Solution</h1>
                 </a>
@@ -192,41 +158,41 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="/index.html" class="nav-item nav-link" >Home</a>
-                        <a href="/about.html" class="nav-item nav-link">About</a>
+                        <a href="index.html" class="nav-item nav-link active" >Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Services</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                             <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
-                                <a href="/AppService.html" class="dropdown-item">App Services</a>
-                                <a href="/WebService.html" class="dropdown-item">Web Services</a>
-                                <a href="/SEOService.html" class="dropdown-item">SEO Services</a>
+                                <a href="AppService.html" class="dropdown-item">App Services</a>
+                                <a href="WebService.html" class="dropdown-item">Web Services</a>
+                                <a href="SEOService.html" class="dropdown-item">SEO Services</a>
                             </div>
                         </div>
 
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
-                                <a href="/feature.html" class="dropdown-item">Features</a>
+                                <a href="feature.html" class="dropdown-item">Features</a>
                                 <!--<a href="team.html" class="dropdown-item">Our Team</a>-->
                                 <!--<a href="testimonial.html" class="dropdown-item">Testimonial</a>-->
-                                <a href="/appoinment.html" class="dropdown-item">Appoinment</a>
-                                <a href="/career.html" class="dropdown-item">Career</a>
+                                <a href="appoinment.html" class="dropdown-item">Appoinment</a>
+                                <a href="career.html" class="dropdown-item">Career</a>
                                 <!--<a href="404.html" class="dropdown-item">404 Page</a>-->
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Recruitment</a>
                             <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
-                                <a href="/recruitment-student.html" class="dropdown-item">Student</a>
-                                <a href="/recruitment-client.html" class="dropdown-item">Client</a>
+                                <a href="recruitment-student.html" class="dropdown-item">Student</a>
+                                <a href="recruitment-client.html" class="dropdown-item">Client</a>
                             </div>
                         </div>
-                        <a href="/Packages.html" class="nav-item nav-link">Packages</a>
-                        <a href="/courses.html" class="nav-item nav-link">Courses</a>
-                        <a href="/contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="Packages.html" class="nav-item nav-link">Packages</a>
+                        <a href="courses.html" class="nav-item nav-link">Courses</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="ms-auto d-none d-lg-block">
-                        <a href="/contact.html" class="btn btn-primary py-2 px-3">Discuss Your Project</a>
+                        <a href="contact.html" class="btn btn-primary py-2 px-3">Discuss Your Project</a>
                     </div>
                 </div>
             </nav>
@@ -241,63 +207,72 @@
 
 
    
-    <div class="container ">
-        <div class="text-center mb-5 ">
-          <h2 class="display-5 fw-bold text-white">Our Investors</h2>
-          <p class="fs-5 text-white-50">
-            Fueling our vision with trust, commitment, and shared success.
-          </p>
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold text-white">Our Investors</h2>
+        <p class="fs-5 text-white-50">
+          Fueling our vision with trust, commitment, and shared success.
+        </p>
+      </div>
+    
+      <div class="row g-4 justify-content-center">
+        <!-- Repeat this column for each investor -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="investor-box text-center">
+            <img src="https://thumbs.dreamstime.com/b/man-profile-cartoon-smiling-round-icon-vector-illustration-graphic-design-135443422.jpg" class="investor-photo mb-3" alt="Investor Photo">
+            <h5 class="investor-name">John Smith</h5>
+            <p class="investor-profile text-muted">Administrative Expert</p>
+            <p class="investor-note">
+              He has invested in our company to accelerate its growth and future vision.
+            </p>
+          </div>
         </div>
-      
-        <div class="row justify-content-center g-4">
-          <!-- Investor 1 -->
-          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-            <div class="investor-card">
-              <img src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg" class="investor-img" alt="Investor 1">
-              <p><strong>Name:</strong> John</p>
-              <p><strong>Description:</strong> Administrative - Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
+    
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="investor-box text-center">
+            <img src="https://thumbs.dreamstime.com/b/man-profile-cartoon-smiling-round-icon-vector-illustration-graphic-design-135443422.jpg" class="investor-photo mb-3" alt="Investor Photo">
+            <h5 class="investor-name">Jane Doe</h5>
+            <p class="investor-profile text-muted">Client Service Specialist</p>
+            <p class="investor-note">
+              She has invested in our company to accelerate its growth and future vision.
+            </p>
           </div>
-      
-          <!-- Investor 2 -->
-          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-            <div class="investor-card dark">
-              <img src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg" class="investor-img" alt="Investor 2">
-              <p><strong>Name:</strong> Jane</p>
-              <p><strong>Description:</strong> Client Service - Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
+        </div>
+    
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="investor-box text-center">
+            <img src="https://thumbs.dreamstime.com/b/man-profile-cartoon-smiling-round-icon-vector-illustration-graphic-design-135443422.jpg" class="investor-photo mb-3" alt="Investor Photo">
+            <h5 class="investor-name">Smith Wilson</h5>
+            <p class="investor-profile text-muted">Project Manager</p>
+            <p class="investor-note">
+              He has invested in our company to accelerate its growth and future vision.
+            </p>
           </div>
-      
-          <!-- Investor 3 -->
-          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-            <div class="investor-card">
-              <img src="https://via.placeholder.com/100" class="investor-img" alt="Investor 3">
-              <p><strong>Name:</strong> Smith</p>
-              <p><strong>Description:</strong> Project Manager - Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
+        </div>
+    
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="investor-box text-center">
+            <img src="https://thumbs.dreamstime.com/b/man-profile-cartoon-smiling-round-icon-vector-illustration-graphic-design-135443422.jpg" class="investor-photo mb-3" alt="Investor Photo">
+            <h5 class="investor-name">John Wick</h5>
+            <p class="investor-profile text-muted">Web Developer</p>
+            <p class="investor-note">
+              He has invested in our company to accelerate its growth and future vision.
+            </p>
           </div>
-      
-          <!-- Investor 4 -->
-          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-            <div class="investor-card dark">
-              <img src="https://via.placeholder.com/100" class="investor-img" alt="Investor 4">
-              <p><strong>Name:</strong> John</p>
-              <p><strong>Description:</strong> Web Developer - Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
-          </div>
-      
-          <!-- Investor 5 -->
-          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-            <div class="investor-card">
-              <img src="https://via.placeholder.com/100" class="investor-img" alt="Investor 5">
-              <p><strong>Name:</strong> Emma</p>
-              <p><strong>Description:</strong> Tech Consultant - Expert in digital transformation and cloud technologies.</p>
-            </div>
+        </div>
+    
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="investor-box text-center">
+            <img src="https://thumbs.dreamstime.com/b/man-profile-cartoon-smiling-round-icon-vector-illustration-graphic-design-135443422.jpg" class="investor-photo mb-3" alt="Investor Photo">
+            <h5 class="investor-name">Emma Watson</h5>
+            <p class="investor-profile text-muted">Tech Consultant</p>
+            <p class="investor-note">
+              She has invested in our company to accelerate its growth and future vision.
+            </p>
           </div>
         </div>
       </div>
-      
-
+    </div>
 
 
 
@@ -412,7 +387,7 @@
       <h3>Request a Callback</h3>
       <p>Please enter your phone number and we will call you back soon.</p>
       <input type="tel" placeholder="+XX XXX-XXX-XXXX">
-      <button>Call Me Now</button>
+      <button>Submit</button>
     </div>
       </div>
     
@@ -448,3 +423,4 @@
 </body>
 
 </html>
+

@@ -291,6 +291,32 @@
       <button>Call Me Now</button>
     </div>
       </div>
+      <div>
+        <!-- Call Button -->
+        <button class="call-btn" id="callToggleBtn">
+            <i class="fas fa-phone flip-horizontal"></i>
+          </button>
+          
+        
+        <!-- Callback Popup -->
+        <div class="callback-popup" id="callbackPopup">
+          <div class="close" onclick="togglePopup()">×</div>
+          <h3>Request a Callback</h3>
+          <p>Please enter your phone number and we will call you back soon.</p>
+          <input type="tel" placeholder="+XX XXX-XXX-XXXX">
+          <button>Submit</button>
+        </div>
+          </div>
+        
+          <!-- Logic for Call Button -->
+        <script>
+            function togglePopup() {
+              const popup = document.getElementById('callbackPopup');
+              popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+            }
+          
+            document.getElementById('callToggleBtn').addEventListener('click', togglePopup);
+          </script>
     
       <!-- Logic for Call Button -->
     <script>
