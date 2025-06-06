@@ -30,92 +30,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <style>
-
-        .chatbot-container {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 9999;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-          }
-      
-          .chatbot-button {
-            background: #fff;
-            border-radius: 50%;
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-          }
-      
-          .chatbot-button img {
-            width: 50px;
-            height: 50px;
-          }
-      
-          .chatbot-button:hover {
-            transform: scale(1.1);
-          }
-      
-          .chatbot-box {
-            position: absolute;
-            bottom: 90px;
-            right: 0;
-            width: 280px;
-            background-color: #f8f9fa;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            padding: 15px;
-            display: none;
-            flex-direction: column;
-            gap: 12px;
-            animation: fadeInUp 0.4s ease;
-          }
-      
-          .chatbot-box.show {
-            display: flex;
-          }
-      
-          .chatbot-header {
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #333;
-          }
-      
-          .chat-option {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: background 0.3s ease;
-            text-align: center;
-          }
-      
-          .chat-option:hover {
-            background-color: #0056b3;
-          }
-      
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-        
-    </style>
+   
 </head>
 
 <body>
@@ -449,6 +364,35 @@
       <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" alt="Chatbot Icon">
     </div>
   </div>
+
+
+
+  <div>
+    <!-- Call Button -->
+    <button class="call-btn" id="callToggleBtn">
+        <i class="fas fa-phone flip-horizontal"></i>
+      </button>
+      
+    
+    <!-- Callback Popup -->
+    <div class="callback-popup" id="callbackPopup">
+      <div class="close" onclick="togglePopup()">×</div>
+      <h3>Request a Callback</h3>
+      <p>Please enter your phone number and we will call you back soon.</p>
+      <input type="tel" placeholder="+XX XXX-XXX-XXXX">
+      <button>Call Me Now</button>
+    </div>
+      </div>
+    
+      <!-- Logic for Call Button -->
+    <script>
+        function togglePopup() {
+          const popup = document.getElementById('callbackPopup');
+          popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+        }
+      
+        document.getElementById('callToggleBtn').addEventListener('click', togglePopup);
+      </script>
   
   <!-- Chatbot Logic -->
   <script>
