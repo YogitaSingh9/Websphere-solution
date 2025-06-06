@@ -82,6 +82,29 @@
             '<i class="bi bi-arrow-right"></i>'
         ]
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const button = document.querySelector("#showPopupBtn");
+        const popup = document.getElementById("appointmentPopup");
+        const closeBtn = document.querySelector(".close-btn");
+    
+        button.addEventListener("click", function () {
+            popup.style.display = "block"; // Show the popup
+        });
+    
+        closeBtn.addEventListener("click", function () {
+            popup.style.display = "none"; // Hide the popup
+        });
+    
+        // Close the popup when clicking outside of the popup content
+        window.addEventListener("click", function (event) {
+            if (event.target === popup) {
+                popup.style.display = "none"; // Hide the popup
+            }
+        });
+    });
+    
+    
     
 })(jQuery);
 

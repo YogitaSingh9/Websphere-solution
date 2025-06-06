@@ -177,31 +177,6 @@
     z-index: 1;
 }
 
-.carousel-item {
-    position: relative !important;
-}
-
-.carousel-item::before {
-    content: "" !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    display: block !important;
-    box-sizing: border-box !important;
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    z-index: 0 !important;
-    pointer-events: none !important;
-}
-
-.carousel-caption {
-    position: relative !important;
-    z-index: 1 !important;
-}
-
 .carousel .carousel-indicators {
     top: 0;
     bottom: 0;
@@ -263,6 +238,89 @@
 
     .carousel .carousel-caption {
         padding-left: 9rem;
+    }
+}
+
+/* Responsive carousel image and caption adjustments */
+.carousel .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (max-width: 992px) {
+    .carousel .carousel-caption {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        text-align: center;
+        bottom: 80px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 95% !important;
+        margin-bottom: 10px !important;
+        z-index: 10 !important;
+    }
+    .carousel .carousel-caption h1 {
+        font-size: 1.8rem !important;
+    }
+    .carousel .carousel-caption a.btn {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.9rem !important;
+    }
+    .carousel .carousel-indicators {
+        width: 100% !important;
+        bottom: 0 !important;
+        top: auto !important;
+        left: 0 !important;
+        transform: none !important;
+        flex-direction: row !important;
+        margin-left: 0 !important;
+        justify-content: center !important;
+        gap: 10px;
+        margin-top: 0 !important;
+        z-index: 20 !important;
+    }
+    .carousel .carousel-indicators [data-bs-target] {
+        width: 40px !important;
+        height: 40px !important;
+        margin: 0 5px !important;
+    }
+    .carousel .carousel-item {
+        min-height: 400px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel .carousel-caption {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        bottom: 15px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 95% !important;
+    }
+    .carousel .carousel-caption h1 {
+        font-size: 1.5rem !important;
+    }
+    .carousel .carousel-caption a.btn {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.8rem !important;
+    }
+    .carousel .carousel-indicators {
+        width: auto !important;
+        bottom: 5px !important;
+        top: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        flex-direction: row !important;
+        margin-left: 0 !important;
+        justify-content: center !important;
+        gap: 8px;
+    }
+    .carousel .carousel-indicators [data-bs-target] {
+        width: 30px !important;
+        height: 30px !important;
+        margin: 0 3px !important;
     }
 }
 
@@ -597,4 +655,152 @@
 
 .copyright a:hover {
     color: var(--bs-primary);
+              
+} 
+/* Popup Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
 }
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.book-appointment {
+    background-color: #007bff; /* Blue color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Slightly rounded corners */
+    padding: 5px 10px; /* Small padding */
+    font-size: 14px; /* Smaller font size */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.book-appointment:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Light background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #ffffff; /* White background for header */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333; /* Dark text color */
+    font-weight: bold;
+}
+
+
+/* Section Styles */
+section {
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333; /* Dark text color */
+}
+
+/* List Styles */
+ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+ul li {
+    margin: 10px 0; /* Margin between list items */
+}
+
+/* Newsletter Styles */
+.newsletter {
+    background-color: #5fa7dbd3; /* White background for newsletter */
+    border: 1px solid #eaeaea7d; /* Light border */
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    margin-right: 10px; /* Space between input and button */
+    border: 1px solid #ccc; /* Light border */
+}
+
+.newsletter button {
+    background-color: #d49a6a; /* Gold-like button */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block; /* Stack items on mobile */
+        margin: 10px 0;
+    }
+
+    .newsletter {
+        padding: 10px;
+    }
+}
+    .custom-button {
+       background-color: blue; /* Change to your desired shade of blue */
+       color: white; /* Text color */
+       border: none; /* Remove border, if needed */
+       padding: 10px 20px; /* Adjust padding */
+       text-decoration: none; /* Remove underline */
+       border-radius: 5px; /* Rounded edges */
+   }
+
+    .custom-button:hover {
+       background-color: darkblue; /* Darker shade on hover */
+   }
+   
+
+   

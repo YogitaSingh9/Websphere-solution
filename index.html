@@ -23,15 +23,13 @@
 
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> 
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="/css/style.css" rel="stylesheet">
-
-   
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -45,15 +43,15 @@
 
     <!-- Topbar Start -->
     <div class="container-fluid bg-primary text-white d-none d-lg-flex wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-2">
+        <div class="container py-3">
             <div class="d-flex align-items-center">
                 <a href="index.html" class="d-flex align-items-center">
                     <h2 class="text-white fw-bold m-0">Websphere Solution</h2>
                 </a>
                 <div class="ms-auto d-flex align-items-center">
                     <!--<small class="ms-4"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</small>-->
-                    <small class="ms-4"><i class="fa fa-envelope me-3"></i>Info@webspheresolution.in</small>
-                    <small class="ms-4"><i class="fa fa-phone-alt me-3"></i>+91-7011032036</small>
+                    <small class="ms-4"><i class="fa fa-envelope me-3"></i><a href="mailto:Info@webspheresolution.in" class="text-white">Info@webspheresolution.in</a></small>
+                    <small class="ms-4"><i class="fa fa-phone-alt me-3"></i><a href="tel:+917011032036" class="text-white">+91-7011032036</a></small>
                     <div class="ms-3 d-flex">
                         <a class="btn btn-sm-square btn-light text-primary ms-2" href="https://www.linkedin.com/company/websphere-solution-pvt-ltd/posts/?feedView=all" target= "blank"><i
                                 class="fab fa-linkedin-in"></i></a>
@@ -70,16 +68,16 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
                 <a href="index.html" class="navbar-brand d-lg-none d-flex align-items-center">
-                    <!--<img src="img/logo.jpg" alt="Logo" style="height:40px; width:auto; margin-right:5px;">-->
+                    <img src="img/logo.jpg" alt="Logo" style="height:40px; width:auto; margin-right:10px;">
                     <h1 class="fw-bold m-0">Websphere Solution</h1>
                 </a>
-<button type="button" class="navbar-toggler me-0 ms-auto" data-bs-toggle="collapse"
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="index.html" class="nav-item nav-link active" >Home</a>
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
@@ -97,20 +95,14 @@
                                 <!--<a href="team.html" class="dropdown-item">Our Team</a>-->
                                 <!--<a href="testimonial.html" class="dropdown-item">Testimonial</a>-->
                                 <a href="appoinment.html" class="dropdown-item">Appoinment</a>
-                                <a href="career.html" class="dropdown-item">Career</a>
                                 <!--<a href="404.html" class="dropdown-item">404 Page</a>-->
                             </div>
                         </div>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Recruitment</a>
-                            <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
-                                <a href="recruitment-student.html" class="dropdown-item">Student</a>
-                                <a href="recruitment-client.html" class="dropdown-item">Client</a>
-                            </div>
-                        </div>
-                        <a href="Packages.html" class="nav-item nav-link">Packages</a>
-                        <a href="courses.html" class="nav-item nav-link">Courses</a>
+                        <a href="Pricing.html" class="nav-item nav-link">Pricing</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <div class="ms-auto d-none d-lg-block">
+                        <a href="appoinment.html" class="btn btn-primary custom-button">Book Your Appointment</a>
                     </div>
                     <div class="ms-auto d-none d-lg-block">
                         <a href="contact.html" class="btn btn-primary py-2 px-3">Discuss Your Project</a>
@@ -128,39 +120,39 @@
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1">
-                    <img class="img-fluid" src="/img/computer.jpg" alt="Image">
+                    <img class="img-fluid" src="img/computer.jpg" alt="Image">
                 </button>
                 <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="1" aria-label="Slide 2">
                     <img class="img-fluid" src="/img/SEO.jpg" alt="Image">
                 </button>
                 <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="2" aria-label="Slide 3">
-                    <img class="img-fluid" src="/img/code.jpg" alt="Image">
+                    <img class="img-fluid" src="img/code.jpg" alt="Image">
                 </button>
             </div>
             <div class="carousel-inner">
-<div class="carousel-item active" style="position: relative; background-image: url('/img/computer.jpg'); height: 100vh;">
-    
-    <div class="carousel-caption" style="position: relative; z-index: 1;">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/computer.jpg" alt="Image">
+                    <div class="carousel-caption">
                         <h1 class="display-1 text-uppercase text-white mb-4 animated zoomIn">Innovating with SEO, IoT & Software
 
                         </h1>
-                       <!--<a href="/about.html" class="btn btn-primary py-3 px-4">Explore More</a>-->
+                        <a href="/about.html" class="btn btn-primary py-3 px-4">Explore More</a>
                     </div>
                 </div>
-<div class="carousel-item" style="position: relative; background-image: url('/img/SEO.jpg');  height: 100vh;">
-   
-    <div class="carousel-caption" style="position: relative; z-index: 1;">
-                        <h1 class="display-1 text-uppercase text-white mb-4 animated zoomIn" >Smart Tech for a Connected Future.
+                <div class="carousel-item">
+                    <img class="w-100" src="img/SEO.jpg" alt="Image">
+                    <div class="carousel-caption">
+                        <h1 class="display-1 text-uppercase text-white mb-4 animated zoomIn">Smart Tech for a Connected Future.
                         </h1>
-                        <!--<a href="about.html" class="btn btn-primary py-3 px-4">Explore More</a>-->
+                        <a href="about.html" class="btn btn-primary py-3 px-4">Explore More</a>
                     </div>
                 </div>
-<div class="carousel-item" style="position: relative; background-image: url('/img/code.jpg');  height: 100vh;">
-    
-    <div class="carousel-caption" style="position: relative; z-index: 1;">
+                <div class="carousel-item">
+                    <img class="w-100" src="img/code.jpg" alt="Image">
+                    <div class="carousel-caption">
                         <h1 class="display-1 text-uppercase text-white mb-4 animated zoomIn">Powering Growth with SEO, IoT & Software
                         </h1>
-                        <!--<a href="about.html" class="btn btn-primary py-3 px-4">Explore More</a>-->
+                        <a href="about.html" class="btn btn-primary py-3 px-4">Explore More</a>
                     </div>
                 </div>
             </div>
@@ -476,7 +468,7 @@
     <!-- Service End -->
 
 
-     <!-- Contact Start -->
+    <!-- Appoinment Start -->
     <div class="container-fluid appoinment mt-6 mb-6 py-5 wow fadeIn" data-wow-delay="0.1s" style="position: relative; background-image: url('img/technology.jpg'); background-size: cover; background-position: center;">
         <div style="position: absolute; inset: 0; background-color: rgba(0, 0, 0.9, 0.9); z-index: 1;"></div>
         <div class="container pt-5" style="position: relative; z-index: 2;">
@@ -503,61 +495,70 @@
                         </div>
                         <div class="ms-3">
                             <h6 class="text-white text-uppercase">Office Time</h6>
-                            <span class="text-white">Mon-Fri 09am-5pm, Sun Closed</span>
+                            <span class="text-white">Mon-Sat 10am-6:30pm, Sun Closed</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-n5 wow fadeIn" data-wow-delay="0.7s">
                     <div class="bg-white p-5">
                         <h2 class="text-uppercase mb-4">Online Appoinment</h2>
-                        <form action="contact-success.html" method="GET">
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0 bg-light" id="name" name="name" placeholder="Your Name" required>
-                                    <label for="name">Your Name</label>
+                                    <input type="text" class="form-control border-0 bg-light" id="name" placeholder="Name">
+                                    <label for="name">Name</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control border-0 bg-light" id="mail" name="mail" placeholder="Your Email" required>
-                                    <label for="mail">Your Email</label>
+                                    <input type="email" class="form-control border-0 bg-light" id="mail" placeholder="Email">
+                                    <label for="mail">Email</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0 bg-light" id="mobile" name="mobile" placeholder="Your Mobile" required>
-                                    <label for="mobile">Your Mobile</label>
+                                    <input type="text" class="form-control border-0 bg-light" id="mobile" placeholder="Mobile">
+                                    <label for="mobile">Mobile</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <select class="form-select border-0 bg-light" id="service" name="service" required>
-                                        <option value="" disabled selected>Choose A Service</option>
-                                        <option value="App service">App service</option>
-                                        <option value="Web Service">Web Service</option>
-                                        <option value="SEO Service">SEO Service</option>
+                                    <select class="form-select border-0 bg-light" id="service">
+                                        <option selected>App service</option>
+                                        <option value="">Web Service</option>
+                                         <option value="">SEO Service</option>
+
                                     </select>
                                     <label for="service">Choose A Service</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control border-0 bg-light" placeholder="Leave a message here" id="message" name="message" style="height: 130px" required></textarea>
-                                    <label for="message">Message</label>
+                                    <textarea class="form-control border-0 bg-light" placeholder="Leave a message here" id="message"
+                                        style="height: 130px"></textarea>
+                                    <label for="message">Description</label>
                                 </div>
                             </div>
                             <div class="col-12 text-center">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
+                                <button id="showPopupBtn" class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
                             </div>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+    <!-- Popup Modal -->
+<div id="appointmentPopup" class="popup">
+    <div class="popup-content">
+        <div class="check-icon">&#10003;</div>
+        <span class="close-btn">&times;</span>
+        <h2>Your Appointment Has Been Booked Successfully!</h2>
+        <p>Our team will contact you soon.</p>
+    </div>
+</div>
+
+    <!-- Appoinment End -->
 
 
     <!-- Team Start 
@@ -702,8 +703,8 @@
     </div>
     <!-- Pricing End -->
 
-    <!-- Testimonial Start 
-         <div class="container-fluid pt-6 pb-6">
+  <!----  Testimonial Start
+    <div class="container-fluid pt-6 pb-6">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h1 class="display-6 text-uppercase mb-5">Voices of Our Happy Clients</h1>
@@ -834,7 +835,7 @@
             </div>
         </div>
     </div>
-    <!-- Newsletter Start -->
+    <!-- Newsletter End -->
 
 
     <!-- Footer Start -->
@@ -853,21 +854,16 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-uppercase text-light mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
                     <a class="btn btn-link" href="">Our Services</a>
                     <a class="btn btn-link" href="">Terms & Condition</a>
                     <a class="btn btn-link" href="">Support</a>
-                    <a class="btn btn-link" href="recruitment-student.html">Student Recruitment</a>
-                    <a class="btn btn-link" href="recruitment-client.html">Client Recruitment</a>
-                    <a class="btn btn-link" href="courses.html">Courses</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-uppercase text-light mb-4">Business Hours</h5>
-                    <p class="text-uppercase mb-0">Monday - Friday</p>
-                    <p>09:00 am - 07:00 pm</p>
-                    <p class="text-uppercase mb-0">Saturday</p>
-                    <p>09:00 am - 12:00 pm</p>
+                    <p class="text-uppercase mb-0">Monday - Saturday</p>
+                    <p>10:00 am - 06:30 pm</p>
                     <p class="text-uppercase mb-0">Sunday</p>
                     <p>Closed</p>
                 </div>
