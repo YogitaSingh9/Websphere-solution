@@ -142,16 +142,16 @@
 
 
     <!-- Topbar Start -->
-    <div class="container-fluid bg-primary text-white d-none d-lg-flex wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-2">
+    <div class="container-fluid bg-primary text-white d-none d-lg-flex wow fadeIn" data-wow-delay="0.1s" style="position: relative; z-index: 1030;">
+        <div class="container py-3">
             <div class="d-flex align-items-center">
-                <a href="/index.html">
+                <a href="index.html">
                     <h2 class="text-white fw-bold m-0">Websphere Solution</h2>
                 </a>
                 <div class="ms-auto d-flex align-items-center">
                     <!--<small class="ms-4"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</small>-->
 <small class="ms-4"><i class="fa fa-envelope me-3"></i><a href="mailto:Info@webspheresolution.in" class="text-white text-decoration-none">Info@webspheresolution.in</a></small>
-                    <small class="ms-4"><i class="fa fa-phone-alt me-3"></i>+91-7011032036</small>
+                    <small class="ms-4"><i class="fa fa-phone-alt me-3"></i><a href="tel:+917011032036" class="text-white">+91-7011032036</a></small>
                     <div class="ms-3 d-flex">
                         <a class="btn btn-sm-square btn-light text-primary ms-2" href="https://www.linkedin.com/company/websphere-solution-pvt-ltd/posts/?feedView=all" target= "blank"><i
                                 class="fab fa-linkedin-in"></i></a>
@@ -163,24 +163,24 @@
     <!-- Topbar End -->
 
 
-  <!-- Navbar Start -->
+   <!-- Navbar Start -->
     <div class="container-fluid bg-white sticky-top wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
-                <a href="/index.html" class="navbar-brand d-lg-none d-flex align-items-center">
-                    <!--<img src="img/logo.jpg" alt="Logo" style="height:40px; width:auto; margin-right:5px;">-->
+                <a href="index.html" class="navbar-brand d-lg-none d-flex align-items-center">
+                    <img src="img/logo.jpg" alt="Logo" style="height:40px; width:auto; margin-right:10px;">
                     <h1 class="fw-bold m-0">Websphere Solution</h1>
                 </a>
-<button type="button" class="navbar-toggler me-0 ms-auto" data-bs-toggle="collapse"
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="/index.html" class="nav-item nav-link" >Home</a>
+                        <a href="/index.html" class="nav-item nav-link">Home</a>
                         <a href="/about.html" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Services</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                             <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
                                 <a href="/AppService.html" class="dropdown-item">App Services</a>
                                 <a href="/WebService.html" class="dropdown-item">Web Services</a>
@@ -188,8 +188,8 @@
                             </div>
                         </div>
 
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                       <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
                             <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
                                 <a href="/feature.html" class="dropdown-item">Features</a>
                                 <!--<a href="team.html" class="dropdown-item">Our Team</a>-->
@@ -206,18 +206,20 @@
                                 <a href="/recruitment-client.html" class="dropdown-item">Client</a>
                             </div>
                         </div>
-                        <a href="/Packages.html" class="nav-item nav-link">Packages</a>
+                        <a href="/Pricing.html" class="nav-item nav-link">Packages</a>
                         <a href="/courses.html" class="nav-item nav-link">Courses</a>
                         <a href="/contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                    <div class="ms-auto d-none d-lg-block">
-                        <a href="/contact.html" class="btn btn-primary py-2 px-3">Discuss Your Project</a>
+                    <div class="ms-auto d-none d-lg-flex gap-3">
+                        <a href="/appoinment.html" class="btn btn-primary custom-button py-2 px-4">Book Your Appointment</a>
+                        <a href="/contact.html" class="btn btn-discuss py-2 px-4"><i class="bi bi-chat-dots"></i></a>
                     </div>
                 </div>
             </nav>
         </div>
     </div>
     <!-- Navbar End -->
+
 
 
 
@@ -235,7 +237,7 @@
     </div>
     <!-- New Section End -->
 
-    <!-- Features Start -->
+   <!-- Features Start -->
     <div class="container-fluid pt-6 pb-6">
         <div class="container pt-4">
             <div class="row g-0 feature-row wow fadeIn" data-wow-delay="0.1s">
@@ -252,7 +254,7 @@
 
 </p>
                             <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
-                                href="Feature/EndtoEnd.html" target="_blank" rel="noopener noreferrer"><b class="bg-white pe-3">Read More</b> <i
+                                href="/Feature/EndtoEnd.html" target="_blank" rel="noopener noreferrer"><b class="bg-white pe-3">Read More</b> <i
                                     class="bi bi-arrow-right bg-white ps-3"></i></a>
                         </div>
                     </div>
@@ -269,7 +271,7 @@
 
 </p>
                             <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
-                                href="Feature/ExpertTeam.html" target="_blank" rel="noopener noreferrer"><b class="bg-white pe-3">Read More</b> <i
+                                href="/Feature/ExpertTeam.html" target="_blank" rel="noopener noreferrer"><b class="bg-white pe-3">Read More</b> <i
                                     class="bi bi-arrow-right bg-white ps-3"></i></a>
                         </div>
                     </div>
@@ -284,7 +286,7 @@
                             <p>Websphere Solution offers flexible, growth-ready services—be it SEO, IoT, or software development—designed to adapt and scale alongside your evolving business needs.
 </p>
                             <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
-                                href="Feature/ScalableServices.html" target="_blank" rel="noopener noreferrer"><b class="bg-white pe-3">Read More</b> <i
+                                href="/Feature/ScalableServices.html" target="_blank" rel="noopener noreferrer"><b class="bg-white pe-3">Read More</b> <i
                                     class="bi bi-arrow-right bg-white ps-3"></i></a>
                         </div>
                     </div>
@@ -299,7 +301,7 @@
                             <p>We use cutting-edge tools and modern platforms to build efficient, future-proof solutions that keep your business ahead and efficient in a rapidly changing digital landscape.
 </p>
                             <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
-                                href="Feature/AdvanceTech.html" target="_blank" rel="noopener noreferrer"><b class="bg-white pe-3">Read More</b> <i
+                                href="/Feature/AdvanceTech.html" target="_blank" rel="noopener noreferrer"><b class="bg-white pe-3">Read More</b> <i
                                     class="bi bi-arrow-right bg-white ps-3"></i></a>
                         </div>
                     </div>
@@ -788,64 +790,63 @@
 
 
 
-   <!-- Footer Start -->
-   <div class="container-fluid bg-dark footer py-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-uppercase text-light mb-4">Our Office</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>C tower, BHUTANI ALPHATHUM, Noida Sector 90, Uttar Pradesh, 201301</p>
-                <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+91-7011032036</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>Info@webspheresolution.in</p>
-                <div class="d-flex pt-3">
-                    <a class="btn btn-square btn-light me-2" href="https://www.linkedin.com/company/websphere-solution-pvt-ltd/posts/?feedView=all" target="blank"><i
-                            class="fab fa-linkedin-in"></i></a>
+ <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase text-light mb-4">Our Office</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>C tower, BHUTANI ALPHATHUM, Noida Sector 90, Uttar Pradesh, 201301</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+91-7011032036</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>Info@webspheresolution.in</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-light me-2" href="https://www.linkedin.com/company/websphere-solution-pvt-ltd/posts/?feedView=all" target= "blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square btn-light me-2" href="https://www.youtube.com/@Webspheresolutionpvtltd/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-uppercase text-light mb-4">Quick Links</h5>
-                <a class="btn btn-link" href="/about.html">About Us</a>
-                <a class="btn btn-link" href="/contact.html">Contact Us</a>
-                <a class="btn btn-link" href="">Our Services</a>
-                <a class="btn btn-link" href="/TermsCondition.html">Terms & Condition</a>
-                <a class="btn btn-link" href="/OurInvestors.html">Our Investors</a>
-                <a class="btn btn-link" href="/PrivatePolicy.html">Private Policy</a>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase text-light mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="/about.html">About Us</a>
+                    <a class="btn btn-link" href="/contact.html">Contact Us</a>                    <a class="btn btn-link" href="/TermsCondition.html">Terms & Condition</a>
+                    <a class="btn btn-link" href="/OurInvestors.html">Our Investors</a>
+                    <a class="btn btn-link" href="/PrivatePolicy.html">Private Policy</a>
 
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-uppercase text-light mb-4">Business Hours</h5>
-                <p class="text-uppercase mb-0">Monday - Saturday</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase text-light mb-4">Business Hours</h5>
+                    <p class="text-uppercase mb-0">Monday - Saturday</p>
                     <p>10:00 am - 06:30 pm</p>
                     <p class="text-uppercase mb-0">Sunday</p>
                     <p>Closed</p>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-uppercase text-light mb-4">Gallery</h5>
-                <div class="row g-1">
-                    <div class="col-4">
-                        <img class="img-fluid" src="/img/App_Dev_1.avif" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid" src="/img/Web_1.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid" src="/img/SEO_1.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid" src="/img/App_Dev_2.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid" src="/img/Web_2.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid" src="/img/SEO_2.jpg" alt="">
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase text-light mb-4">Gallery</h5>
+                    <div class="row g-1">
+                        <div class="col-4">
+                            <img class="img-fluid" src="/img/App_Dev_1.avif" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid" src="/img/Web_1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid" src="/img/SEO_1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid" src="/img/App_Dev_2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid" src="/img/Web_2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid" src="/img/SEO_2.jpg" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Footer End -->
+    <!-- Footer End -->
     
     <!-- Copyright Start -->
     <div class="container-fluid text-body copyright py-4">

@@ -30,6 +30,28 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .btn-discuss {
+            background-color: transparent !important;
+            border: 2px solid #0d6efd; /* Bootstrap primary color */
+            color: #0d6efd !important;
+            padding: 0.375rem 0.75rem;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.375rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn-discuss:hover, .btn-discuss:focus {
+            background-color: #0d6efd !important;
+            color: white !important;
+            text-decoration: none;
+        }
+        .btn-discuss i {
+            font-size: 1.5rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,16 +63,16 @@
     <!-- Spinner End -->
 
 
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-primary text-white d-none d-lg-flex wow fadeIn" data-wow-delay="0.1s">
+   <!-- Topbar Start -->
+    <div class="container-fluid bg-primary text-white d-none d-lg-flex wow fadeIn" data-wow-delay="0.1s" style="position: relative; z-index: 1030;">
         <div class="container py-3">
             <div class="d-flex align-items-center">
-                <a href="index.html" class="d-flex align-items-center">
+                <a href="index.html">
                     <h2 class="text-white fw-bold m-0">Websphere Solution</h2>
                 </a>
                 <div class="ms-auto d-flex align-items-center">
                     <!--<small class="ms-4"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</small>-->
-                    <small class="ms-4"><i class="fa fa-envelope me-3"></i><a href="mailto:Info@webspheresolution.in" class="text-white">Info@webspheresolution.in</a></small>
+<small class="ms-4"><i class="fa fa-envelope me-3"></i><a href="mailto:Info@webspheresolution.in" class="text-white text-decoration-none">Info@webspheresolution.in</a></small>
                     <small class="ms-4"><i class="fa fa-phone-alt me-3"></i><a href="tel:+917011032036" class="text-white">+91-7011032036</a></small>
                     <div class="ms-3 d-flex">
                         <a class="btn btn-sm-square btn-light text-primary ms-2" href="https://www.linkedin.com/company/websphere-solution-pvt-ltd/posts/?feedView=all" target= "blank"><i
@@ -88,24 +110,31 @@
                             </div>
                         </div>
 
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                       <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
                             <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
                                 <a href="feature.html" class="dropdown-item">Features</a>
                                 <!--<a href="team.html" class="dropdown-item">Our Team</a>-->
                                 <!--<a href="testimonial.html" class="dropdown-item">Testimonial</a>-->
                                 <a href="appoinment.html" class="dropdown-item">Appoinment</a>
+                                <a href="career.html" class="dropdown-item">Career</a>
                                 <!--<a href="404.html" class="dropdown-item">404 Page</a>-->
                             </div>
                         </div>
-                        <a href="Pricing.html" class="nav-item nav-link">Pricing</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Recruitment</a>
+                            <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
+                                <a href="recruitment-student.html" class="dropdown-item">Student</a>
+                                <a href="recruitment-client.html" class="dropdown-item">Client</a>
+                            </div>
+                        </div>
+                        <a href="Pricing.html" class="nav-item nav-link">Packages</a>
+                        <a href="courses.html" class="nav-item nav-link">Courses</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                    <div class="ms-auto d-none d-lg-block">
-                        <a href="appoinment.html" class="btn btn-primary custom-button">Book Your Appointment</a>
-                    </div>
-                    <div class="ms-auto d-none d-lg-block">
-                        <a href="contact.html" class="btn btn-primary py-2 px-3">Discuss Your Project</a>
+                    <div class="ms-auto d-none d-lg-flex gap-3">
+                        <a href="appoinment.html" class="btn btn-primary custom-button py-2 px-4">Book Your Appointment</a>
+                        <a href="contact.html" class="btn btn-discuss py-2 px-4"><i class="bi bi-chat-dots"></i></a>
                     </div>
                 </div>
             </nav>
@@ -255,6 +284,9 @@
   <!-- Features Start -->
 <div class="container-fluid pt-5 pb-1 mt-5 mb-5 animated-feature-section">
     <div class="container p-3">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="display-6 text-uppercase mb-5">Our Features</h1>
+            </div>
       <div id="Feature-id" class="row g-4 feature-row">
         
         <!-- Feature 1 -->
@@ -265,7 +297,7 @@
             </div>
             <div class="p-5 pt-0">
               <h5 class="text-uppercase mb-3">End-to-End</h5>
-              <p>From initial planning to final deployment, Websphere Solution provides full-cycle solutions tailored to your business needs.</p>
+              <p>From initial planning to final deployment, We provides full-cycle solutions tailored to your business needs.</p>
               <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
                 href="Feature/EndtoEnd.html" target="_blank"><b class="bg-white pe-3">Read More</b><i class="bi bi-arrow-right bg-white ps-3"></i></a>
             </div>
@@ -876,7 +908,7 @@
     <!-- Newsletter End -->
 
 
-    <!-- Footer Start -->
+   <!-- Footer Start -->
     <div class="container-fluid bg-dark footer py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
@@ -886,15 +918,15 @@
                     <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+91-7011032036</p>
                     <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>Info@webspheresolution.in</p>
                     <div class="d-flex pt-3">
-                        <a class="btn btn-square btn-light me-2" href="https://www.linkedin.com/company/websphere-solution-pvt-ltd/posts/?feedView=all" target="blank"><i
+                        <a class="btn btn-square btn-light me-2" href="https://www.linkedin.com/company/websphere-solution-pvt-ltd/posts/?feedView=all" target= "blank"><i
                                 class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square btn-light me-2" href="https://www.youtube.com/@Webspheresolutionpvtltd/videos" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-uppercase text-light mb-4">Quick Links</h5>
                     <a class="btn btn-link" href="about.html">About Us</a>
                     <a class="btn btn-link" href="contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
                     <a class="btn btn-link" href="TermsCondition.html">Terms & Condition</a>
                     <a class="btn btn-link" href="OurInvestors.html">Our Investors</a>
                     <a class="btn btn-link" href="PrivatePolicy.html">Private Policy</a>
