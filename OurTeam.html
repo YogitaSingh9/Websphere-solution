@@ -30,22 +30,236 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+ 
     <style>
-
-
-        
-        .pricing-card {
-            transition: all 0.4s ease-in-out;
-            background-color: #fff;
+        :root {
+          --primary-color: #868dab;
+          --secondary-color: #a37d0c;
+          --accent-color: #f72585;
+          --light-color: #f8f9fa;
+          --dark-color: #212529;
         }
         
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
-            border-color: #007bff;
+      
+        .team-section {
+          padding: 80px 0;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .team-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 300px;
+          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+          z-index: -1;
+          clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+        }
     
+        .team-title {
+          font-size: 3rem;
+          font-weight: 700;
+          margin-bottom: 20px;
+          color: white;
+          text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-    </style>
+        
+        .team-subtitle {
+          color: rgba(255,255,255,0.9);
+          font-size: 1.2rem;
+          max-width: 700px;
+          margin: 0 auto 50px;
+        }
+    
+        .team-card {
+          background: #fff;
+          border: none;
+          border-radius: 15px;
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          margin-bottom: 30px;
+          z-index: 1;
+        }
+        
+        .team-card::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          z-index: -1;
+        }
+    
+        .team-card:hover {
+          transform: translateY(-15px) scale(1.02);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .team-card:hover::after {
+          opacity: 0.05;
+        }
+        
+        .team-card:hover .card-body h5 {
+          color: var(--primary-color);
+        }
+        
+        .team-card:hover .team-img {
+          transform: scale(1.05);
+        }
+    
+        .team-img-container {
+          width: 100%;
+          height: 300px;
+          overflow: hidden;
+          position: relative;
+        }
+        
+        .team-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+        
+        .team-overlay {
+          position: absolute;
+          bottom: -100%;
+          left: 0;
+          width: 100%;
+          background: rgb(218, 226, 138);
+          color: rgb(0, 0, 0);
+          padding: 20px;
+          transition: bottom 0.4s ease;
+          text-align: left;
+        }
+        
+        .team-card:hover .team-overlay {
+          bottom: 0;
+        }
+    
+        .card-body {
+          padding: 25px;
+          position: relative;
+        }
+        
+        .card-body h5 {
+          font-weight: 700;
+          color: var(--dark-color);
+          margin-bottom: 5px;
+          transition: color 0.3s ease;
+        }
+        
+        .card-body p {
+          font-size: 0.95rem;
+          color: #6c757d;
+          margin-bottom: 15px;
+        }
+        
+        .member-role {
+          display: inline-block;
+          background: var(--primary-color);
+          color: white;
+          padding: 3px 12px;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          margin-bottom: 15px;
+        }
+    
+        .social-icons {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+        }
+        
+        .social-icons a {
+          width: 36px;
+          height: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(67, 97, 238, 0.1);
+          color: var(--primary-color);
+          border-radius: 50%;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+          background: var(--primary-color);
+          color: white;
+          transform: translateY(-3px);
+        }
+        
+        .animate-delay-1 {
+          animation-delay: 0.2s;
+        }
+        
+        .animate-delay-2 {
+          animation-delay: 0.4s;
+        }
+        
+        .animate-delay-3 {
+          animation-delay: 0.6s;
+        }
+        
+        .animate-delay-4 {
+          animation-delay: 0.8s;
+        }
+    
+        @media (max-width: 992px) {
+          .team-title {
+            font-size: 2.5rem;
+          }
+          
+          .team-subtitle {
+            font-size: 1.1rem;
+          }
+        }
+    
+        @media (max-width: 768px) {
+          .team-section {
+            padding: 60px 0;
+          }
+          
+          .team-title {
+            font-size: 2.2rem;
+          }
+          
+          .team-img-container {
+            height: 250px;
+          }
+        }
+    
+        @media (max-width: 576px) {
+          .team-section {
+            padding: 50px 0;
+          }
+          
+          .team-title {
+            font-size: 2rem;
+          margin-bottom: 15px;
+          }
+          
+          .team-subtitle {
+            font-size: 1rem;
+            margin-bottom: 40px;
+          }
+          
+          .team-img-container {
+            height: 220px;
+          }
+        }
+      </style>
 </head>
 
 <body>
@@ -62,6 +276,7 @@
         <div class="container py-3">
             <div class="d-flex align-items-center">
                 <a href="index.html" class="d-flex align-items-center">
+                 
                     <h2 class="text-white fw-bold m-0">Websphere Solution</h2>
                 </a>
                 <div class="ms-auto d-flex align-items-center">
@@ -137,199 +352,113 @@
 
 
 
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header pt-5 mb-6 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container text-center pt-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="bg-white p-5">
-                        <h1 class="display-6 text-uppercase mb-3 animated slideInDown">App Services</h1>
-                        <nav aria-label="breadcrumb animated slideInDown">
-                            <ol class="breadcrumb justify-content-center mb-0">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Services</a></li>
-                                <li class="breadcrumb-item" aria-current="page">App Services</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Page Header End -->
 
-    <!-- New Section Start -->
-    <div class="container-fluid pt-6 pb-6">
+
+
+
+    
+      <section class="team-section">
         <div class="container">
-            <div class="text-center mx-auto" style="max-width: 1000px;">
-                <h1 class="display-6 text-uppercase mb-4">Mobile Solutions</h1>
-                <p class="mb-4">For over a decade, Websphere Solutions has been delivering high-performance mobile solutions across a wide range of platforms and industries. Our skilled team of dedicated Android and iOS developers brings deep technical expertise and creative insight to every project, ensuring robust, user-centric apps that deliver real business value. At Websphere Solutions, our core focus is on client success. We build custom mobile applications tailored to transform your business model, streamline operations, and enhance user engagement. Every app we develop is designed with a unique perspective, aligning with your brand identity and market goals. We offer full-cycle mobile development services across all major platforms, including Android, iOS, and cross-platform frameworks, to suit the specific needs of your business. From initial consultation to post-launch support, we handle it all — including discovery, strategy, UI/UX design, development, deployment, maintenance, and app marketing. Whether you're launching a startup or scaling an enterprise solution, Websphere Solutions ensures seamless delivery and performance. Let us help you turn your app idea into a powerful digital solution that drives growth and engagement.
-
-</p>
+          <h2 class="team-title animate__animated animate__fadeInDown">Meet Our Team</h2>
+          <p class="team-subtitle animate__animated animate__fadeIn animate__delay-1s">We're a team of passionate professionals dedicated to delivering exceptional results</p>
+          
+          <div class="row g-4">
+            <!-- Team Member 1 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="card team-card animate__animated animate__fadeInUp animate-delay-1">
+                <div class="team-img-container">
+                  <img src="https://thumbs.dreamstime.com/b/man-profile-cartoon-smiling-round-icon-vector-illustration-graphic-design-135443422.jpg" class="team-img" alt="John Doe">
+                  <div class="team-overlay">
+                    <p>Specializes in React, Vue, and modern JavaScript frameworks with 8 years of experience.</p>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <span class="member-role">Development</span>
+                  <h5 class="card-title">John Doe</h5>
+                  <p class="card-text">Frontend Developer</p>
+                  <div class="social-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-    <!-- New Section End -->
-
     
-<!-- Features Start -->
-<div class="container-fluid pt-5 pb-1 mt-5 mb-5 animated-feature-section">
-    <div class="container p-3">
-      <div id="Feature-id" class="row g-4 feature-row">
-        
-        <!-- Feature 1 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="feature-item border h-100">
-            <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
-              <i class="fa fa-project-diagram fa-2x text-white"></i>
-            </div>
-            <div class="p-5 pt-0">
-              <h5 class="text-uppercase mb-3">End-to-End</h5>
-              <p>From initial planning to final deployment, Websphere Solution provides full-cycle solutions tailored to your business needs.</p>
-              <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
-                href="Feature/EndtoEnd.html" target="_blank"><b class="bg-white pe-3">Read More</b><i class="bi bi-arrow-right bg-white ps-3"></i></a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Feature 2 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="feature-item border h-100">
-            <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
-              <i class="fa fa-users-cog fa-2x text-white"></i>
-            </div>
-            <div class="p-5 pt-0">
-              <h5 class="text-uppercase">Expert Team</h5>
-              <p>Our experienced developers and marketers deliver innovative and results-driven technology solutions.</p>
-              <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
-                href="Feature/ExpertTeam.html" target="_blank"><b class="bg-white pe-3">Read More</b><i class="bi bi-arrow-right bg-white ps-3"></i></a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Feature 3 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="feature-item border h-100">
-            <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
-              <i class="fa fa-chart-line fa-2x text-white"></i>
-            </div>
-            <div class="p-5 pt-0">
-              <h5 class="text-uppercase">Scalable Services</h5>
-              <p>Flexible, growth-ready services—be it SEO, IoT, or software—designed to scale with your business.</p>
-              <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
-                href="Feature/ScalableServices.html" target="_blank"><b class="bg-white pe-3">Read More</b><i class="bi bi-arrow-right bg-white ps-3"></i></a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Feature 4 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="feature-item border h-100">
-            <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
-              <i class="fa fa-tools fa-2x text-white"></i>
-            </div>
-            <div class="p-5 pt-0">
-              <h5 class="text-uppercase">Advanced Tech</h5>
-              <p>We use cutting-edge tools to build future-proof solutions that keep your business ahead in a changing world.</p>
-              <a class="position-relative text-body text-uppercase small d-flex justify-content-between"
-                href="Feature/AdvanceTech.html" target="_blank"><b class="bg-white pe-3">Read More</b><i class="bi bi-arrow-right bg-white ps-3"></i></a>
-            </div>
-          </div>
-        </div>
-  
-      </div>
-    </div>
-  </div>
-  <!-- Features End -->
-
-
-<!-- Pricing Start -->
-<div class="container-fluid pt-6 pb-6">
-    <div class="container">
-        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h1 class="display-6 text-uppercase mb-5">Our Pricing Plans</h1>
-        </div>
-        <div class="row g-4">
-            <!-- Web Services Plan -->
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="pricing-card h-100 border rounded p-5 shadow-sm">
-                    <h3 class="text-uppercase mb-4">Web Services Plan</h3>
-                    <h1 class="display-5 mb-4">₹ 25,000<span class="fs-5 fw-normal">/-</span></h1>
-                    <ul class="list-unstyled mb-4">
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Everything in Standard</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Upto 10 Pages</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>E-commerce Functionality</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Custom Animations</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Mobile & Tablet Compatibility</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>SSL Certificate Setup</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Priority Support</li>
-                    </ul>
+            <!-- Team Member 2 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="card team-card animate__animated animate__fadeInUp animate-delay-2">
+                <div class="team-img-container">
+                  <img src="https://thumbs.dreamstime.com/b/man-profile-cartoon-smiling-round-icon-vector-illustration-graphic-design-135443422.jpg" class="team-img" alt="Samantha Smith">
+                  <div class="team-overlay">
+                    <p>Creates beautiful, user-centered designs with a focus on accessibility and usability.</p>
+                  </div>
                 </div>
-            </div>
-            <!-- App Services Plan -->
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="pricing-card h-100 border rounded p-5 shadow-sm">
-                    <h3 class="text-uppercase mb-4">App Services Plan</h3>
-                    <h1 class="display-5 mb-4">₹60,000<span class="fs-5 fw-normal">/-</span></h1>
-                    <ul class="list-unstyled mb-4">
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Cross-Platform App Design (Android & iOS)</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Up to 15 Screens</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Advanced UI/UX with Animations</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Payment Gateway Setup</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>App Store & Play Store Deployment</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Real-Time Database Integration</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Bug Fixes & Minor Updates</li>
-                    </ul>
+                <div class="card-body">
+                  <span class="member-role">Design</span>
+                  <h5 class="card-title">Samantha Smith</h5>
+                  <p class="card-text">UI/UX Designer</p>
+                  <div class="social-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                  </div>
                 </div>
+              </div>
             </div>
-            <!-- SEO Services Plan -->
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="pricing-card h-100 border rounded p-5 shadow-sm">
-                    <h3 class="text-uppercase mb-4">SEO Services Plan</h3>
-                    <h1 class="display-5 mb-4">₹6,00,000<span class="fs-5 fw-normal">/-</span></h1>
-                    <ul class="list-unstyled mb-4">
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Website SEO Audit</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>On-Page Optimization (Title, Meta Tags, Headers)</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Google Search Console Setup</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Keyword Strategy (30+ Keywords)</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>High-Quality Backlink Building</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Schema Markup Implementation</li>
-                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Conversion Rate Optimization (CRO)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Pricing End -->
-
     
-    
-  <!-- Newsletter Start -->
-    <div class="container-fluid newsletter mt-6 wow fadeIn" data-wow-delay="0.1s" style="position: relative; background-image: url('img/technology.jpg'); background-size: cover; background-position: center;">
-        <div style="position: absolute; inset: 0; background-color: rgba(0, 0, 0.9, 0.9); z-index: 1;"></div>
-        <div class="container pb-5" style="position: relative; z-index: 2;">
-            <div class="bg-white p-5 mb-5">
-                <div class="row g-5">
-                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
-                        <h1 class="display-6 text-uppercase mb-4">Newsletter</h1>
-                        <div class="d-flex">
-                            <i class="far fa-envelope-open fa-3x text-primary me-4"></i>
-                            <p class="fs-5 fst-italic mb-0">Stay updated with the latest tech trends, tips, and Websphere Solution news — subscribe to our newsletter!</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.5s">
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control border-0 bg-light" id="mail" placeholder="Your Email">
-                            <label for="mail">Your Email</label>
-                        </div>
-                        <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
-                    </div>
+            <!-- Team Member 3 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="card team-card animate__animated animate__fadeInUp animate-delay-3">
+                <div class="team-img-container">
+                  <img src="https://thumbs.dreamstime.com/b/man-profile-cartoon-smiling-round-icon-vector-illustration-graphic-design-135443422.jpg" class="team-img" alt="Michael Brown">
+                  <div class="team-overlay">
+                    <p>Expert in Node.js, Python, and database architecture with a security-first approach.</p>
+                  </div>
                 </div>
+                <div class="card-body">
+                  <span class="member-role">Development</span>
+                  <h5 class="card-title">Michael Brown</h5>
+                  <p class="card-text">Backend Developer</p>
+                  <div class="social-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-stack-overflow"></i></a>
+                  </div>
+                </div>
+              </div>
             </div>
+    
+            <!-- Team Member 4 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="card team-card animate__animated animate__fadeInUp animate-delay-4">
+                <div class="team-img-container">
+                  <img src="https://thumbs.dreamstime.com/b/man-profile-cartoon-smiling-round-icon-vector-illustration-graphic-design-135443422.jpg" class="team-img" alt="Aisha Khan">
+                  <div class="team-overlay">
+                    <p>Leads projects with agile methodologies and ensures timely delivery of quality products.</p>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <span class="member-role">Management</span>
+                  <h5 class="card-title">Aisha Khan</h5>
+                  <p class="card-text">Project Manager</p>
+                  <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <!-- Newsletter Start -->
+      </section>
+    
+      <!-- Bootstrap JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      
+ 
+
 
 
     <!-- Footer Start -->
@@ -394,8 +523,6 @@
     </div>
     <!-- Footer End -->
 
-
-
     <!-- Copyright Start -->
     <div class="container-fluid text-body copyright py-4">
         <div class="container">
@@ -410,6 +537,12 @@
         </div>
     </div>
     <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+
 
 <!-- Chatbot Integration -->
 <div class="chatbot-container">
@@ -426,6 +559,7 @@
       <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" alt="Chatbot Icon">
     </div>
   </div>
+
 
 
   <div>
@@ -454,6 +588,9 @@
       
         document.getElementById('callToggleBtn').addEventListener('click', togglePopup);
       </script>
+
+
+
   
   <!-- Chatbot Logic -->
   <script>
@@ -462,7 +599,6 @@
       chatBox.classList.toggle('show');
     }
   </script>
-
 
     <!-- WhatsApp Floating Button -->
     <div class="whatsapp-float" id="whatsappButton">
@@ -485,6 +621,45 @@
           }, 500);
         });
       </script>
+      
+
+      <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+          const animateElements = document.querySelectorAll('.animate__animated');
+          
+          const animateOnScroll = function() {
+            animateElements.forEach(element => {
+              const elementPosition = element.getBoundingClientRect().top;
+              const windowHeight = window.innerHeight;
+              
+              if (elementPosition < windowHeight - 100) {
+                const animationClass = element.classList[1];
+                element.classList.add(animationClass);
+              }
+            });
+          };
+          
+          // Run once on load
+          animateOnScroll();
+          
+          // Run on scroll
+          window.addEventListener('scroll', animateOnScroll);
+          
+          // Add smooth hover effects
+          const teamCards = document.querySelectorAll('.team-card');
+          teamCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+              this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+              this.style.transform = 'translateY(0) scale(1)';
+            });
+          });
+        });
+      </script>
+
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>

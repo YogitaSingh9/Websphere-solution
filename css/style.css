@@ -145,6 +145,59 @@
   }
   
 
+/* Whates App  */
+.whatsapp-float {
+    position: fixed;
+    bottom: 150px;
+    left: 20px;
+    z-index: 9999;
+    animation: floatBounce 2s ease-in-out infinite;
+    -webkit-animation: floatBounce 2s ease-in-out infinite;
+}
+
+  .whatsapp-icon {
+    width: 85px;
+    height: 85px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+  }
+
+  .whatsapp-icon:hover {
+    background-color: #128c7e;
+    transform: scale(1.15);
+  }
+
+  @keyframes floatBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .whatsapp-icon {
+      width: 45px;
+      height: 45px;
+      font-size: 22px;
+    }
+
+    .whatsapp-float {
+      bottom: 100px;
+      left: 20px;
+    }
+  }
+
+
+
 /* Chat Bot Style  */
 
 
@@ -384,7 +437,18 @@
 }
 
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
+    .navbar .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-right: auto;
+    }
+
+    .navbar .navbar-toggler {
+        margin-left: auto;
+    }
+
+    .navbar .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
@@ -393,24 +457,15 @@
         margin-top: 15px;
         border-top: 1px solid #EEEEEE;
     }
-}
 
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        border: none;
-        margin-top: 0;
-        top: 150%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        top: 100%;
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
+    .navbar .navbar-brand h1 {
+        font-size: 18px; /* or try 16px */
+        margin: 0;
     }
 }
 

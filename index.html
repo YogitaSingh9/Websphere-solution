@@ -62,6 +62,7 @@
         <div class="container py-3">
             <div class="d-flex align-items-center">
                 <a href="index.html" class="d-flex align-items-center">
+                 
                     <h2 class="text-white fw-bold m-0">Websphere Solution</h2>
                 </a>
                 <div class="ms-auto d-flex align-items-center">
@@ -84,7 +85,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
                 <a href="index.html" class="navbar-brand d-lg-none d-flex align-items-center">
-                    <!--<img src="img/logo.jpg" alt="Logo" style="height:40px; width:auto; margin-right:5px;">-->
+                    <img src="img/logo.jpg" alt="Logo" style="height:40px; width:auto; margin-right:5px;">
                     <h1 class="fw-bold m-0">Websphere Solution</h1>
                 </a>
 <button type="button" class="navbar-toggler me-0 ms-auto" data-bs-toggle="collapse"
@@ -864,9 +865,10 @@
                     <h5 class="text-uppercase text-light mb-4">Quick Links</h5>
                     <a class="btn btn-link" href="about.html">About Us</a>
                     <a class="btn btn-link" href="contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
+                    
                     <a class="btn btn-link" href="TermsCondition.html">Terms & Condition</a>
                     <a class="btn btn-link" href="OurInvestors.html">Our Investors</a>
+                    <a class="btn btn-link" href="OurTeam.html">Our Team</a>
                     <a class="btn btn-link" href="PrivatePolicy.html">Private Policy</a>
 
                 </div>
@@ -983,6 +985,28 @@
       chatBox.classList.toggle('show');
     }
   </script>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float" id="whatsappButton">
+        <a href="https://wa.me/919999999999" target="_blank" class="whatsapp-icon" aria-label="Chat on WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    
+      <!-- Optional JS (Only needed if you want to control visibility or animation on scroll later) -->
+      <script>
+        // Optional: Stop bounce on scroll down, resume when not scrolling
+        let floatBtn = document.getElementById("whatsappButton");
+        let isScrolling;
+    
+        window.addEventListener("scroll", () => {
+          floatBtn.style.animationPlayState = "paused";
+          clearTimeout(isScrolling);
+          isScrolling = setTimeout(() => {
+            floatBtn.style.animationPlayState = "running";
+          }, 500);
+        });
+      </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
