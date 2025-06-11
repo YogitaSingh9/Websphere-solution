@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Professional Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+   <!-- Favicon -->
+    <link href="img/logo.jpg" rel="icon" type="image/jpeg">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+    .hero {
+      background: #f9fafb;
+      padding-top: 8rem;
+      padding-bottom: 6rem;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.125rem;
+      color: #4b5563;
+    }
+    
+    .btn-primary:hover,
+    .btn-primary:focus {
+      color: black;
+      background-color: #CE9233;
+ outline: none;
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px -5px rgba(37, 99, 235, 0.6);
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid #2563eb;
+      outline-offset: 3px;
+    }
+
+    /* Main Content Blog Posts Grid */
+    main.container {
+      max-width: 1200px;
+      margin: 0 auto 6rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+
+    article {
+      background-color: #fff;
+      border-radius: 0.75rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.3s ease;
+      user-select: none;
+    }
+    article:hover,
+    article:focus-within {
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+    article img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-top-left-radius: 0.75rem;
+      border-top-right-radius: 0.75rem;
+    }
+    article h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #111827;
+      margin: 1.25rem 1.5rem 0.75rem;
+      user-select: text;
+    }
+    article p {
+      flex-grow: 1;
+      font-size: 1rem;
+      color: #4b5563;
+      margin: 0 1.5rem 1.5rem;
+      line-height: 1.5;
+      user-select: text;
+    }
+
+    article a.btn {
+      margin: 0 1.5rem 1.5rem;
+      align-self: flex-start;
+    }
+
+    /* Section for Features */
+    .features-section {
+      background-color: #f9fafb;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+    .features-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      /* Use 3 columns for large screens to accommodate 6 features nicely */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 0.75rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      user-select: none;
+      transition: box-shadow 0.3s ease;
+    }
+    .feature-card:hover,
+    .feature-card:focus-within {
+      box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+    }
+    .feature-icon {
+      font-size: 3.5rem;
+      color: #2563eb;
+      margin-bottom: 1rem;
+      user-select: none;
+    }
+    .feature-title {
+      font-weight: 700;
+      color: #111827;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .feature-desc {
+      color: #4b5563;
+      font-size: 1rem;
+      user-select: text;
+    }
+
+    /* Footer */
+    footer.footer {
+      background-color: #343a40;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #6b7280;
+      user-select: none;
+    }
+    footer.footer a.btn-link {
+      font-weight: 600;
+      color: #6b7280;
+      text-transform: capitalize;
+      margin: 0 0.5rem;
+      display: inline-block;
+      transition: color 0.3s ease, letter-spacing 0.3s ease;
+    }
+    footer.footer a.btn-link:hover,
+    footer.footer a.btn-link:focus {
+      color: #CE9233;
+
+      letter-spacing: 1px;
+      outline: none;
+    }
+    footer.footer a.btn-link:focus-visible {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+    footer.footer p.copyright {
+      margin-top: 0.5rem;
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      display: none;
+      left: 30px;
+      bottom: 30px;
+      z-index: 9999;
+      background-color: #CE9233;
+
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.5);
+      transition: opacity 0.3s ease;
+      user-select: none;
+    }
+    #back-to-top.show {
+      display: flex;
+      opacity: 1;
+    }
+    #back-to-top:hover,
+    #back-to-top:focus {
+      background-color: #1e40af;
+      outline: none;
+      transform: scale(1.1);
+    }
+    #back-to-top:focus-visible {
+      outline: 2px solid #1e40af;
+      outline-offset: 2px;
+    }
+
+
+    /* Call Button (lighter/greenish accent) */
+    .call-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #22c55e; /* green */
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 10000;
+      box-shadow: 0 8px 20px rgba(34, 197, 94, 0.6);
+      transition: transform 0.3s ease;
+      user-select: none;
+    }
+    .call-btn:hover,
+    .call-btn:focus {
+      background-color: #16a34a;
+      transform: scale(1.1);
+      outline: none;
+    }
+    .call-btn:focus-visible {
+      outline: 2px solid #16a34a;
+      outline-offset: 3px;
+    }
+
+    /* Popup Form */
+    .callback-popup {
+      position: fixed;
+      bottom: 100px;
+      left: 20px;
+      background-color: #ffffff;
+      padding: 20px;
+      width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      z-index: 10001;
+      display: none;
+      user-select: none;
+    }
+
+    .callback-popup input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      margin-bottom: 18px;
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+      font-size: 14px;
+      color: #374151;
+      font-weight: 500;
+      user-select: text;
+      transition: border-color 0.3s ease;
+    }
+    .callback-popup input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 5px #2563ebaa;
+    }
+
+    .callback-popup button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2563eb;
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    .callback-popup button:hover,
+    .callback-popup button:focus {
+      background-color: #1e40af;
+      outline: none;
+    }
+    .callback-popup button:focus-visible {
+      outline: 2px solid #1e40af;
+      outline-offset: 2px;
+    }
+
+    .callback-popup .close {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      cursor: pointer;
+      font-weight: 700;
+      color: #9ca3af;
+      font-size: 18px;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+    .callback-popup .close:hover,
+    .callback-popup .close:focus {
+      color: #2563eb;
+      outline: none;
+    }
+    .callback-popup .close:focus-visible {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+
+    /* Chat Bot Style */
+    .chatbot-container {
+      position: fixed;
+      bottom: 15px;
+      right: 25px;
+      z-index: 10000;
+      font-family: 'Inter', sans-serif;
+      user-select: none;
+    }
+    .chatbot-button {
+      background: #f9fafb;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .chatbot-button img {
+      width: 52px;
+      height: 52px;
+      filter: grayscale(1);
+      user-select: none;
+    }
+    .chatbot-button:hover,
+    .chatbot-button:focus {
+      filter: grayscale(0);
+      outline: none;
+      transform: scale(1.1);
+    }
+    .chatbot-button:focus-visible {
+      outline: 2px solid #2563eb;
+      outline-offset: 3px;
+    }
+    .chatbot-box {
+      position: absolute;
+      bottom: 90px;
+      right: 0;
+      width: 280px;
+      background-color: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+      padding: 20px;
+      display: none;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 15px;
+      color: #374151;
+      user-select: text;
+      transition: opacity 0.3s ease;
+    }
+    .chatbot-box.show {
+      display: flex;
+      opacity: 1;
+    }
+    .chatbot-header {
+      font-weight: 700;
+      font-size: 18px;
+      color: #111827;
+      margin-bottom: 8px;
+      user-select: none;
+    }
+    .chat-option {
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgb(59 130 246 / 0.4);
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    .chat-option:hover,
+    .chat-option:focus {
+      background-color: #2563eb;
+      outline: none;
+    }
+    .chat-option:focus-visible {
+      outline: 2px solid #2563eb;
+      outline-offset: 3px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 768px) {
+      nav.navbar {
+        padding: 0 0.75rem;
+      }
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+      main.container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .call-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+        bottom: 15px;
+        left: 15px;
+      }
+      .callback-popup {
+        width: 260px;
+        padding: 15px;
+        bottom: 90px;
+        left: 15px;
+      }
+      .chatbot-button {
+        width: 60px;
+        height: 60px;
+      }
+      .chatbot-box {
+        width: 225px;
+        padding: 15px;
+        gap: 10px;
+      }
+      .features-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  
+   
+  
+</head>
+<body>
+  <!-- Topbar Start -->
+    <div class="container-fluid bg-primary text-white d-none d-lg-flex wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-3">
+            <div class="d-flex align-items-center">
+                <a href="index.html" class="d-flex align-items-center">
+                    <h2 class="text-white fw-bold m-0">Websphere Solution</h2>
+                </a>
+                <div class="ms-auto d-flex align-items-center">
+                    <!--<small class="ms-4"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</small>-->
+<small class="ms-4"><i class="fa fa-envelope me-3"></i><a href="mailto:Info@webspheresolution.in" class="text-white text-decoration-none">Info@webspheresolution.in</a></small>
+                    <small class="ms-4"><i class="fa fa-phone-alt me-3"></i>+91-7011032036</small>
+                    <div class="ms-3 d-flex">
+                        <a class="btn btn-sm-square btn-light text-primary ms-2" href="https://www.linkedin.com/company/websphere-solution-pvt-ltd/posts/?feedView=all" target= "blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+     
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-white sticky-top wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
+                <a href="index.html" class="navbar-brand d-lg-none d-flex align-items-center">
+                    <!--<img src="img/logo.jpg" alt="Logo" style="height:40px; width:auto; margin-right:5px;">-->
+                    <h1 class="fw-bold m-0">Websphere Solution</h1>
+                </a>
+<button type="button" class="navbar-toggler me-0 ms-auto" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link active" >Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
+                                <a href="AppService.html" class="dropdown-item">App Services</a>
+                                <a href="WebService.html" class="dropdown-item">Web Services</a>
+                                <a href="SEOService.html" class="dropdown-item">SEO Services</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
+                                <a href="feature.html" class="dropdown-item">Features</a>
+                                <!--<a href="team.html" class="dropdown-item">Our Team</a>-->
+                                <!--<a href="testimonial.html" class="dropdown-item">Testimonial</a>-->
+                                <a href="appoinment.html" class="dropdown-item">Appoinment</a>
+                                <a href="career.html" class="dropdown-item">Career</a>
+                                <!--<a href="404.html" class="dropdown-item">404 Page</a>-->
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Recruitment</a>
+                            <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
+                                <a href="recruitment-student.html" class="dropdown-item">Student</a>
+                                <a href="recruitment-client.html" class="dropdown-item">Client</a>
+                            </div>
+                        </div>
+                        <a href="Packages.html" class="nav-item nav-link">Packages</a>
+                        <a href="courses.html" class="nav-item nav-link">Courses</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <div class="ms-auto d-none d-lg-block">
+                        <a href="contact.html" class="btn btn-primary py-2 px-3">Discuss Your Project</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+     <!-- Hero Section -->
+  <section class="hero" role="region" aria-label="Introduction">
+    <div class="container">
+      <h1 tabindex="0">Build Your Component Library</h1>
+      <p tabindex="0">A clean, modern, and elegant platform to showcase your latest blog posts with clarity and focus.</p>
+      <button class="btn-primary" type="button">Get Started</button>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container" role="main">
+    <article tabindex="0" aria-label="Blog post: Introducing modern CSS">
+      <img src="img/download.jpeg" alt="css image">
+      <h2>Introducing Modern CSS</h2>
+      <p>Discover the latest CSS features like container queries, subgrid, and advanced animations to create stunning, responsive designs.</p>
+      <a href="#" class="btn btn-primary" aria-label="Read more about Introducing Modern CSS">Read More</a>
+    </article>
+
+    <article tabindex="0" aria-label="Blog post: Designing minimal interfaces">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Minimal workspace desk with laptop" />
+      <h2>Designing Minimal Interfaces</h2>
+      <p>Learn how whitespace, typography, and subtle shadows can create a powerful and elegant user experience in your next project.</p>
+      <a href="#" class="btn btn-primary" aria-label="Read more about Designing Minimal Interfaces">Read More</a>
+    </article>
+
+    <article tabindex="0" aria-label="Blog post: Accessibility best practices">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Computer screen showing accessibility tools" />
+      <h2>Accessibility Best Practices</h2>
+      <p>Implement semantic HTML5 and ARIA roles to improve accessibility and reach a broader, more diverse audience.</p>
+      <a href="#" class="btn btn-primary" aria-label="Read more about Accessibility Best Practices">Read More</a>
+    </article>
+
+    <article tabindex="0" aria-label="Blog post: Enhance performance with modern tooling">
+      <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Developer working with code on multiple monitors" />
+      <h2>Enhance Performance with Modern Tooling</h2>
+      <p>Speed up your frontend workflows using tools such as Tailwind CSS, PostCSS, and more to build fast, maintainable apps.</p>
+      <a href="#" class="btn btn-primary" aria-label="Read more about Enhance Performance with Modern Tooling">Read More</a>
+    </article>
+
+    <article tabindex="0" aria-label="Blog post: Modern JavaScript patterns">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="JavaScript code on screen" />
+      <h2>Modern JavaScript Patterns</h2>
+      <p>Understand modern JavaScript design patterns that enhance readability, maintainability, and scalability of your codebase.</p>
+      <a href="#" class="btn btn-primary" aria-label="Read more about Modern JavaScript Patterns">Read More</a>
+    </article>
+
+    <article tabindex="0" aria-label="Blog post: UI performance optimization">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Fast code execution" />
+      <h2>UI Performance Optimization</h2>
+      <p>Techniques and best practices to ensure your user interfaces are fast and responsive, improving user satisfaction and engagement.</p>
+      <a href="#" class="btn btn-primary" aria-label="Read more about UI Performance Optimization">Read More</a>
+    </article>
+  </main>
+
+  <!-- Features Section -->
+  <section class="features-section" aria-label="Features">
+    <div class="container features-container">
+      <div class="feature-card" tabindex="0">
+        <div class="feature-icon" aria-hidden="true">⚡</div>
+        <div class="feature-title">Lightning Fast</div>
+        <p class="feature-desc">Optimized components that load quickly and run smoothly without compromising quality.</p>
+      </div>
+      <div class="feature-card" tabindex="0">
+        <div class="feature-icon" aria-hidden="true">🎨</div>
+        <div class="feature-title">Customizable</div>
+        <p class="feature-desc">Easily style and extend components to match your brand and design system.</p>
+      </div>
+      <div class="feature-card" tabindex="0">
+        <div class="feature-icon" aria-hidden="true">🛠️</div>
+        <div class="feature-title">Developer Friendly</div>
+        <p class="feature-desc">Clear API designs, comprehensive documentation, and intuitive usage.</p>
+      </div>
+      <div class="feature-card" tabindex="0">
+        <div class="feature-icon" aria-hidden="true">🔒</div>
+        <div class="feature-title">Secure</div>
+        <p class="feature-desc">Built with security best practices to protect your users and data.</p>
+      </div>
+      <div class="feature-card" tabindex="0">
+        <div class="feature-icon" aria-hidden="true">⚙️</div>
+        <div class="feature-title">Highly Scalable</div>
+        <p class="feature-desc">Our components grow with your needs, supporting small projects to enterprise solutions.</p>
+      </div>
+      <div class="feature-card" tabindex="0">
+        <div class="feature-icon" aria-hidden="true">🌐</div>
+        <div class="feature-title">Global Support</div>
+        <p class="feature-desc">Comprehensive language and locale support for worldwide applications.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase text-light mb-4">Our Office</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>C tower, BHUTANI ALPHATHUM, Noida Sector 90, Uttar Pradesh, 201301</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+91-7011032036</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>Info@webspheresolution.in</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-light me-2" href="https://www.linkedin.com/company/websphere-solution-pvt-ltd/posts/?feedView=all" target="blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase text-light mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="TermsCondition.html">Terms & Condition</a>
+                    <a class="btn btn-link" href="OurInvestors.html">Our Investors</a>
+                    <a class="btn btn-link" href="PrivatePolicy.html">Private Policy</a>
+
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase text-light mb-4">Business Hours</h5>
+                    <p class="text-uppercase mb-0">Monday - Friday</p>
+                    <p>09:00 am - 07:00 pm</p>
+                    <p class="text-uppercase mb-0">Saturday</p>
+                    <p>09:00 am - 12:00 pm</p>
+                    <p class="text-uppercase mb-0">Sunday</p>
+                    <p>Closed</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase text-light mb-4">Gallery</h5>
+                    <div class="row g-1">
+                        <div class="col-4">
+                            <img class="img-fluid" src="img/App_Dev_1.avif" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid" src="img/Web_1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid" src="img/SEO_1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid" src="img/App_Dev_2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid" src="img/Web_2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid" src="img/SEO_2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top" type="button">
+    <svg aria-hidden="true" focusable="false" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 3.293l4.646 4.647-1.414 1.414L8 6.121l-3.232 3.233-1.414-1.414L8 3.293z"/>
+    </svg>
+  </button>
+
+  <!-- Call Button -->
+
+   <!-- Call Button -->
+    <button class="call-btn" id="callToggleBtn">
+        <i class="fas fa-phone flip-horizontal"></i>
+      </button>
+      <!-- Callback Popup -->
+    <div class="callback-popup" id="callbackPopup">
+      <div class="close" onclick="togglePopup()">×</div>
+      <h3>Request a Callback</h3>
+      <p>Please enter your phone number and we will call you back soon.</p>
+      <input type="tel" placeholder="+XX XXX-XXX-XXXX">
+      <button>Submit</button>
+    </div>
+      </div>
+    
+      <!-- Logic for Call Button -->
+    <script>
+        function togglePopup() {
+          const popup = document.getElementById('callbackPopup');
+          popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+        }
+      
+        document.getElementById('callToggleBtn').addEventListener('click', togglePopup);
+      </script>
+
+
+
+  <!-- Chat Bot -->
+  <div class="chatbot-container">
+    <button class="chatbot-button" id="chatbot-button" aria-label="Open chat" title="Open chat" type="button">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" alt="Chatbot Icon" width="52" height="52" />
+    </button>
+    <div class="chatbot-box" id="chatbot-box" role="dialog" aria-modal="true" aria-labelledby="chatbot-header">
+      <div id="chatbot-header" class="chatbot-header" tabindex="0">Chat with us!</div>
+      <div class="chat-option" tabindex="0" role="button">How can we help you?</div>
+      <div class="chat-option" tabindex="0" role="button">Talk to a representative</div>
+      <div class="chat-option" tabindex="0" role="button">Pricing Information</div>
+      <div class="chat-option" tabindex="0" role="button">Report a Bug</div>
+    </div>
+  </div>
+
+  <script>
+    // Back to top button display and scroll
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Chat bot toggle
+    const chatBtn = document.getElementById('chatbot-button');
+    const chatBox = document.getElementById('chatbot-box');
+    chatBtn.addEventListener('click', () => {
+      chatBox.classList.toggle('show');
+      if(chatBox.classList.contains('show')){
+        chatBox.querySelector('[tabindex="0"]').focus();
+      }
+    });
+
+    // Call button click (example: open tel prompt)
+    document.getElementById('call-btn').addEventListener('click', () => {
+      window.location.href = 'tel:+1234567890';
+    });
+  </script>
+</body>
+</html>
+
